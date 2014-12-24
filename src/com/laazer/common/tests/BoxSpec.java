@@ -57,6 +57,6 @@ public class BoxSpec {
     public void testMap() {
         init();
         assertEquals(empty3.map(Functions.toString), empty3);
-        //assertEquals(integerBox.map(Functions.toString), Box.fill("1"));
+        assertEquals(integerBox.map(Functions.toString), Box.fill("1"));
     }
 }

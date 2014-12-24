@@ -6,7 +6,7 @@ import com.google.common.base.Function;
 
 public class ListUtils {
     
-    public static <K, T> List<T> map(List<K> list, Function<K, T> f) {
+    public static <K, T> List<T> map(List<? extends K> list, Function<? super K, T> f) {
         List<T> result = new ArrayList<T>();
         for(int i = 0; i < list.size(); i++) {
             result.add(f.apply(list.get(i)));

@@ -37,7 +37,8 @@ public abstract class Box <T> {
      * @return a <code>Box</code> containing a mapped version of what was previously inside.
      * if the <code>Box</code> is empty the box will remain empty.
      */
-    public <B> Box<B> map(Function<T, B> f){return Box.empty();}
+    public <B> Box<? extends B> map(Function<? super T, ? extends B> f){return Box.empty();}
+
     /**
      * Retrieves what's inside this <code>Box</code>
      * @return whatever is inside this <code>Box</code>
@@ -130,8 +131,8 @@ class Full<T> extends Box<T> {
     @Override
     public boolean isFull() {return true;}
     @Override
-    public <B> Box<B> map(Function<T, B> f) {
-        return new Full<B>(f.apply(this.cat));
+    public <B> Box<? extends B> map(Function<? super T, ? extends B> f) {
+        return new Full(f.apply(this.cat));
     }
     @Override
     public T get(){return this.cat;}
