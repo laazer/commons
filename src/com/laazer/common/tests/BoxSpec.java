@@ -3,6 +3,7 @@ package com.laazer.common.tests;
 import static org.junit.Assert.*;
 import com.laazer.common.Box;
 import com.laazer.common.Functions;
+import com.laazer.common.TestUtils;
 import org.junit.Test;
 
 import java.util.function.Function;
@@ -58,5 +59,28 @@ public class BoxSpec {
         init();
         assertEquals(empty3.map(Functions.toString), empty3);
         assertEquals(integerBox.map(Functions.toString), Box.fill("1"));
+        assertEquals(Box.fill("true").map(Functions.toBoolean), Box.fill(true));
+    }
+
+    @Test
+    public void testIsEmpty() {
+        init();
+        assertTrue(empty1.isEmpty());
+        assertFalse(stringBox.isEmpty());
+    }
+
+    @Test
+    public void testIsFull() {
+        init();
+        assertFalse(empty1.isFull());
+        assertTrue(stringBox.isFull());
+    }
+
+    @Test
+    public void testGet() {
+        init();
+        assertEquals(stringBox.get(), "abc");
+        assertEquals(integerBox.get(), new Integer(1));
+        TestUtils.assertException(empty1.isFull(), "Empty Box");
     }
 }

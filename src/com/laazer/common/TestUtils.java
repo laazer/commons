@@ -1,13 +1,34 @@
 package com.laazer.common;
 
+import static org.junit.Assert.*;
+
 public class TestUtils {
-    
-    public static Boolean assertException(Boolean test, Exception thrown) {
+
+    public static void assertException(Boolean test, Exception thrown) {
+        assertException(test, thrown, "");
+    }
+
+    public static void assertException(Boolean test, Exception thrown, String msg) {
         try {
-            return false;
+            assert test;
+            assertTrue(msg, false);
         }
         catch (Exception caught) {
-            return thrown.toString().equals(caught.toString());
+            assertTrue(msg, caught.toString().contains(thrown.toString()));
+        }
+    }
+
+    public static void assertException(Boolean test, String thrown) {
+        assertException(test, thrown, "");
+    }
+
+    public static void assertException(Boolean test, String thrown, String msg) {
+        try {
+            assert test;
+            assertTrue(msg, false);
+        }
+        catch (Exception caught) {
+            assertTrue(msg, caught.toString().contains(thrown));
         }
     }
 }
