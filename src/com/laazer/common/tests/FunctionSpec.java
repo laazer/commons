@@ -25,6 +25,6 @@ public class FunctionSpec {
     
     @Test 
     public void testBinFunctions() {
-        
+        assertTrue(Functions.add.apply(1, 2).equals(3));
     }
 }

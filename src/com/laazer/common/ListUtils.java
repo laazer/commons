@@ -5,7 +5,15 @@ import java.util.List;
 import com.google.common.base.Function;
 
 public class ListUtils {
-    
+
+    public static <T> Hat<T> magic(List<T> stuffing) {
+        return new Hat(stuffing);
+    }
+
+    public static Integer sum(List<Integer> list) {
+        return ListUtils.fold(0, Functions.add, list);
+    }
+
     public static <K, T> List<T> map(List<? extends K> list, Function<? super K, T> f) {
         List<T> result = new ArrayList<T>();
         for(int i = 0; i < list.size(); i++) {
@@ -29,7 +37,6 @@ public class ListUtils {
             return fold(f.apply(base, tmp), f, list);
         }
     }
-    
     
     private static class ToSame<T> implements Function<T, T> {
         @Override
@@ -71,4 +78,20 @@ public class ListUtils {
             return ListUtils.map(ListUtils.toList.apply(value), Functions.toDouble);
         }
     }
+}
+
+class Hat<K> {
+    List<K> rabbit;
+    public Hat(List<K> rabbit) {
+        this.rabbit = rabbit;
+    }
+
+    public <T> List<T> map(Function<? super K, T> f) {
+        return ListUtils.map(rabbit, f);
+    }
+
+    public <T> T fold(T base, BinFunction<T, K, T> f) {
+        return ListUtils.fold(base, f, rabbit);
+    }
+
 }
