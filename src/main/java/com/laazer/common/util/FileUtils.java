@@ -1,7 +1,7 @@
 package com.laazer.common.util;
 
 import java.io.*;
-import java.main.com.laazer.common.collections.Box;
+import com.laazer.common.collections.Box;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -44,10 +44,12 @@ public class FileUtils {
             }
         }
 
+        @Override
         public boolean hasNext() {
             return line != null;
         }
 
+        @Override
         public String next() {
             try {
                 String l = line;
@@ -58,6 +60,12 @@ public class FileUtils {
             }
         }
 
+        @Override
+        public void remove() {
+            throw new UnsupportedOperationException("this method is not currently supported");
+        }
+
+        @Override
         public Iterator<String> iterator() {
             return this;
         }
@@ -78,4 +86,6 @@ public class FileUtils {
             return Box.EMPTY;
         }
     }
+
+
 }

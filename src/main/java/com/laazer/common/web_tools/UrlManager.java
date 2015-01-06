@@ -1,4 +1,4 @@
-package java.main.com.laazer.common.web_tools;
+package com.laazer.common.web_tools;
 
 import java.io.*;
 import com.laazer.common.collections.Box;
@@ -8,7 +8,7 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class UrlManager {
     public static Box<String> executeGet(String target) {
-        Box<String> result = Box.empty();
+        Box<String> result = Box.EMPTY;
         try {
            String out = ""; 
            HttpsURLConnection con = (HttpsURLConnection)(new URL(target).openConnection());          
@@ -26,7 +26,7 @@ public class UrlManager {
 
         } catch (IOException e) {
             e.printStackTrace();
-            result = Box.empty();
+            result = Box.EMPTY;
         }
         return result;
     }

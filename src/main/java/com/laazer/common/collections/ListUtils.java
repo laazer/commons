@@ -1,7 +1,7 @@
-package java.main.com.laazer.common.collections;
+package com.laazer.common.collections;
 
-import java.main.com.laazer.common.functions.BinFunction;
-import java.main.com.laazer.common.functions.Functions;
+import com.laazer.common.functions.BinFunction;
+import com.laazer.common.functions.Functions;
 import java.util.ArrayList;
 import java.util.List;
 import com.google.common.base.Function;

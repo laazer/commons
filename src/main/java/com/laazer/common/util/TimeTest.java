@@ -1,5 +1,9 @@
 package com.laazer.common.util;
 
+import com.google.common.base.Function;
+import com.laazer.common.collections.ListUtils;
+import com.laazer.common.functions.Functions;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,7 +24,7 @@ public class TimeTest  {
     }
 
     public synchronized static void addMarker(String marker) {
-        map.put(marker, new ArrayList<>());
+        map.put(marker, new ArrayList());
     }
 
     public synchronized static long mark(String marker) {
@@ -41,8 +45,9 @@ public class TimeTest  {
         return total/map.get(marker).size();
     }
 
+
     public static List<Double> getTimesInMilli(String marker) {
-        return getTimes(marker).stream().map((Long l) -> l * MILLI_MULT).collect(Collectors.toList());
+        return ListUtils.magic(getTimes(marker)).map(Functions.multL(Long l)-> l * MILLI_MULT).collect(Collectors.toList());
     }
 
     public static Double getAvgMilliTime(String marker) {

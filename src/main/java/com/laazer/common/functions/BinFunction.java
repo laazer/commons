@@ -1,6 +1,9 @@
-package java.main.com.laazer.common.functions;
+package com.laazer.common.functions;
 
-public interface BinFunction <K1, K2, T> {
-    public T apply(K1 value1, K2 value2);
+import com.google.common.base.Function;
+
+public interface BinFunction<X, Y, Z> {
+    public Z apply(X value1, Y value2);
+    public Function<Y, Z> toUniFun(X value);
 }
 

@@ -1,9 +1,9 @@
-package java.main.com.laazer.common.functions;
+package com.laazer.common.functions;
 
 import java.util.ArrayList;
 import java.util.List;
 import com.google.common.base.Function;
-import java.main.com.laazer.common.functions.BinFunction;
+import com.laazer.common.collections.ListUtils;
 
 /**
  * Class containing common functions
@@ -11,6 +11,14 @@ import java.main.com.laazer.common.functions.BinFunction;
  *
  */
 public class Functions {
+
+    public static Function<Object, Object> identity = new Identity();
+    private static class Identity<X> implements Function<X, X> {
+        @Override
+        public X apply(X value) {
+            return value;
+        }
+    }
 
     public static Function<Object, String> toString = new ToString();
     private static class ToString implements Function<Object, String> {
@@ -43,15 +51,6 @@ public class Functions {
             return Boolean.parseBoolean(value.toString());
         }
     }
-    
-    public static BinFunction<List, List, List> append = new Append();
-    private static class Append<T> implements BinFunction<List<T>, List<T>, List<T>> {
-        public List<T> apply(List<T> value1, List<T> value2) {
-            List<T> result = new ArrayList<T>();
-            result.addAll(value1); result.addAll(value2);
-            return result;
-        }
-    }
 
     /**
      * Transforms a {@code Function} into a {@code BinFunction}
@@ -61,31 +60,118 @@ public class Functions {
      * @param <Z> function return type
      * @return a {@code BinFunction} representation of the given {@code Function}
      */
-    private static <X, Y, Z> BinFunction<X, Y, Z> toBinFunction(final Function<X, Function<Y, Z>> function) {
-        class CompFun implements BinFunction<X, Y, Z> {
-            Function<X, Function<Y, Z>> f;
-            CompFun(Function<X, Function<Y, Z>> f) {
-                this.f = f;
-            }
-            public Z apply(X value1, Y value2) {
-                return function.apply(value1).apply(value2);
-            }
-        }
+    public static <X, Y, Z> BinFunction<X, Y, Z> toBinFunction(Function<X, Function<Y, Z>> function) {
         return new CompFun(function);
     }
-    
-    public static BinFunction<Integer, Integer, Integer> add = new Add();
-    private static class Add implements BinFunction<Integer, Integer, Integer> {
-        public Integer apply(Integer value1, Integer value2) {
-            return value1 + value2;
-        }
-        
+
+    public static <X, Y, Z> Function<Y, Z> toUniFunction(BinFunction<X, Y, Z> function, X value) {
+        return function.toUniFun(value);
     }
-    
-    private static BinFunction<Object, Object, Boolean> equals = new Equals();
-    private static class Equals implements BinFunction<Object, Object, Boolean> {
-        public Boolean apply(Object value1, Object value2) {
-            return value1.equals(value2);
+
+    public static BinFunction<List, List, List> append = Functions.toBinFunction(new Append());
+    private static class Append<T> implements Function<List<T>, Function<List<T>, List<T>>> {
+        @Override
+        public Function<List<T>, List<T>> apply(List<T> value) {
+            return new Append1(value);
         }
+        private class Append1 implements Function<List<T>, List<T>> {
+            List<T> x;
+            Append1(List<T> x) {
+                x = x;
+            }
+            @Override
+            public List<T> apply(List<T> value) {
+                List<T> result = new ArrayList<T>();
+                result.addAll(x); result.addAll(value);
+                return result;
+            }
+        }
+    }
+
+    public static BinFunction<Object, Object, Boolean> equals = Functions.toBinFunction(new Equals());
+    private static class Equals implements Function<Object, Function<Object, Boolean>> {
+        @Override
+        public Function<Object, Boolean> apply(Object value) {
+            return new Equals1(value);
+        }
+        private class Equals1 implements Function<Object, Boolean> {
+            Object x;
+            Equals1(Object x) {
+                x = x;
+            }
+            @Override
+            public Boolean apply(Object value) {
+                return x.equals(value);
+            }
+        }
+    }
+
+    public static BinFunction<Integer, Integer, Integer> mult = Functions.toBinFunction(new Multiply());
+    private static class Multiply implements Function<Integer, Function<Integer, Integer>> {
+        @Override
+        public Function<Integer, Integer> apply(Integer value) {
+            return new Multiply1(value);
+        }
+        private class Multiply1 implements Function<Integer, Integer> {
+            Integer x;
+            Multiply1(Integer x) {
+                x = x;
+            }
+            @Override
+            public Integer apply(Integer value) {
+                return x * value;
+            }
+        }
+    }
+
+    public static BinFunction<Long, Long, Long> multL = Functions.toBinFunction(new MultiplyL());
+    private static class MultiplyL implements Function<Long, Function<Long, Long>> {
+        @Override
+        public Function<Long, Long> apply(Long value) {
+            return new MultiplyL1(value);
+        }
+        private class MultiplyL1 implements Function<Long, Long> {
+            Integer x;
+            MultiplyL1(Long x) {
+                x = x;
+            }
+            @Override
+            public Long apply(Long value) {
+                return x * value;
+            }
+        }
+    }
+
+    public static BinFunction<Integer, Integer, Integer> add = Functions.toBinFunction(new Add());
+    private static class Add implements Function<Integer, Function<Integer, Integer>> {
+        @Override
+        public Function<Integer, Integer> apply(Integer value) {
+            return new Add1(value);
+        }
+        private class Add1 implements Function<Integer, Integer> {
+            Integer x;
+            Add1(Integer x) {
+                x = x;
+            }
+            @Override
+            public Integer apply(Integer value) {
+                return x + value;
+            }
+        }
+    }
+
+}
+
+class CompFun<X, Y, Z> implements BinFunction<X, Y, Z> {
+    Function<X, Function<Y, Z>> f;
+    public CompFun(Function<X, Function<Y, Z>> f) {
+        this.f = f;
+    }
+    public Z apply(X value1, Y value2) {
+        return f.apply(value1).apply(value2);
+    }
+
+    public Function<Y, Z> toUniFun(X value) {
+        return f.apply(value);
     }
 }

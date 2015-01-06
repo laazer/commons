@@ -1,4 +1,4 @@
-package java.main.com.laazer.common.collections;
+package com.laazer.common.collections;
 
 import java.util.Collections;
 import java.util.List;
