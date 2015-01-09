@@ -94,39 +94,4 @@ public class GenMap<K, V> implements Map<K, V> {
             return map.entrySet();
         }
     }
-
-    @Override
-    public V getOrDefault(Object key, V defaultValue) {
-        synchronized (Lock) {
-            return map.getOrDefault(key, defaultValue);
-        }
-    }
-
-    @Override
-    public V putIfAbsent(K key, V value) {
-        synchronized (Lock) {
-            return map.putIfAbsent(key, value);
-        }
-    }
-
-    @Override
-    public boolean remove(Object key, Object value) {
-        synchronized (Lock) {
-            return map.remove(key, value);
-        }
-    }
-
-    @Override
-    public boolean replace(K key, V oldValue, V newValue) {
-        synchronized (Lock) {
-            return map.replace(key, oldValue, newValue);
-        }
-    }
-
-    @Override
-    public V replace(K key, V value) {
-        synchronized (Lock) {
-            return map.replace(key, value);
-        }
-    }
 }

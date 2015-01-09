@@ -3,7 +3,8 @@ package com.laazer.common.functions;
 import java.util.ArrayList;
 import java.util.List;
 import com.google.common.base.Function;
-import com.laazer.common.collections.ListUtils;
+import com.google.common.base.Predicate;
+import com.google.common.collect.Lists;
 
 /**
  * Class containing common functions
@@ -131,12 +132,30 @@ public class Functions {
             return new MultiplyL1(value);
         }
         private class MultiplyL1 implements Function<Long, Long> {
-            Integer x;
+            Long x;
             MultiplyL1(Long x) {
                 x = x;
             }
             @Override
             public Long apply(Long value) {
+                return x * value;
+            }
+        }
+    }
+
+    public static BinFunction<Double, Double, Double> multD = Functions.toBinFunction(new MultiplyD());
+    private static class MultiplyD implements Function<Double, Function<Double, Double>> {
+        @Override
+        public Function<Double, Double> apply(Double value) {
+            return new MultiplyD1(value);
+        }
+        private class MultiplyD1 implements Function<Double, Double> {
+            Double x;
+            MultiplyD1(Double x) {
+                x = x;
+            }
+            @Override
+            public Double apply(Double value) {
                 return x * value;
             }
         }
@@ -157,6 +176,19 @@ public class Functions {
             public Integer apply(Integer value) {
                 return x + value;
             }
+        }
+    }
+
+    public static <X> Predicate<X> toPredicate(Function<X, Boolean> f) {
+        return new ToPredicate<X>(f);
+    }
+    private static class ToPredicate<X> implements Predicate<X> {
+        Function<X, Boolean> f;
+        ToPredicate(Function<X, Boolean> foo){
+            this.f = foo;
+        }
+        public boolean apply(X x) {
+            return f.apply(x);
         }
     }
 

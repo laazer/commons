@@ -2,13 +2,14 @@ package com.laazer.common.util;
 
 import com.google.common.base.Function;
 import com.laazer.common.collections.ListUtils;
+import com.laazer.common.functions.BinFunction;
 import com.laazer.common.functions.Functions;
+import com.sun.beans.editors.NumberEditor;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * Created by Intern on 8/17/2014.
@@ -45,9 +46,20 @@ public class TimeTest  {
         return total/map.get(marker).size();
     }
 
+    private static class MultMili implements Function<Long, Double> {
+        public Double apply(Long x) {
+            return x * MILLI_MULT;
+        }
+    }
+
+    private static class MultSec implements Function<Long, Double> {
+        public Double apply(Long x) {
+            return x * SEC_MULT;
+        }
+    }
 
     public static List<Double> getTimesInMilli(String marker) {
-        return ListUtils.magic(getTimes(marker)).map(Functions.multL(Long l)-> l * MILLI_MULT).collect(Collectors.toList());
+        return ListUtils.map(getTimes(marker), new MultMili());
     }
 
     public static Double getAvgMilliTime(String marker) {
@@ -55,7 +67,7 @@ public class TimeTest  {
     }
 
     public static List<Double> getTimesInSec(String marker) {
-        return getTimes(marker).stream().map((Long l) -> l * SEC_MULT).collect(Collectors.toList());
+        return ListUtils.map(getTimes(marker), new MultSec());
     }
 
     public static Double getAvgSecTime(String marker) {

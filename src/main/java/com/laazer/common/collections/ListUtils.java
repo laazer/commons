@@ -2,14 +2,15 @@ package com.laazer.common.collections;
 
 import com.laazer.common.functions.BinFunction;
 import com.laazer.common.functions.Functions;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.*;
+
 import com.google.common.base.Function;
 
 public class ListUtils {
 
-    public static <T> Hat<T> magic(List<T> stuffing) {
-        return new Hat(stuffing);
+    public static <T> MagicList<T> magic(List<T> stuffing) {
+        return new MagicList(stuffing);
     }
 
     public static Integer sum(List<Integer> list) {
@@ -31,7 +32,7 @@ public class ListUtils {
         }
         return list;
     }
-    
+
     public static <K, T> T fold(T base, BinFunction<T, K, T> f, List<K> list) {
         if(list.isEmpty()) {return base;}
         else {
@@ -47,7 +48,6 @@ public class ListUtils {
         }
         
     }
-    
     public static Function<Object, List<Object>> toList = new ToList();
     private static class ToList implements Function<Object, List<Object>> {
         @Override
@@ -82,9 +82,9 @@ public class ListUtils {
     }
 }
 
-class Hat<K> {
+class MagicList<K> implements List<K> {
     List<K> rabbit;
-    public Hat(List<K> rabbit) {
+    public MagicList(List<K> rabbit) {
         this.rabbit = rabbit;
     }
 
@@ -96,4 +96,118 @@ class Hat<K> {
         return ListUtils.fold(base, f, rabbit);
     }
 
+    @Override
+    public int size() {
+        return rabbit.size();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return rabbit.isEmpty();
+    }
+
+    @Override
+    public boolean contains(Object o) {
+        return rabbit.contains(o);
+    }
+
+    @Override
+    public Iterator<K> iterator() {
+        return rabbit.iterator();
+    }
+
+    @Override
+    public Object[] toArray() {
+        return rabbit.toArray();
+    }
+
+    @Override
+    public <T> T[] toArray(T[] a) {
+        return rabbit.toArray(a);
+    }
+
+    @Override
+    public boolean add(K k) {
+        return rabbit.add(k);
+    }
+
+    @Override
+    public boolean remove(Object o) {
+        return rabbit.remove(o);
+    }
+
+    @Override
+    public boolean containsAll(Collection<?> c) {
+        return rabbit.containsAll(c);
+    }
+
+    @Override
+    public boolean addAll(Collection<? extends K> c) {
+        return rabbit.addAll(c);
+    }
+
+    @Override
+    public boolean addAll(int index, Collection<? extends K> c) {
+        return rabbit.addAll(c);
+    }
+
+    @Override
+    public boolean removeAll(Collection<?> c) {
+        return rabbit.removeAll(c);
+    }
+
+    @Override
+    public boolean retainAll(Collection<?> c) {
+        return rabbit.retainAll(c);
+    }
+
+    @Override
+    public void clear() {
+        rabbit.clear();
+    }
+
+    @Override
+    public K get(int index) {
+        return rabbit.get(index);
+    }
+
+    @Override
+    public K set(int index, K element) {
+        return rabbit.set(index, element);
+    }
+
+    @Override
+    public void add(int index, K element) {
+
+    }
+
+    @Override
+    public K remove(int index) {
+        return rabbit.remove(index);
+    }
+
+    @Override
+    public int indexOf(Object o) {
+        return rabbit.indexOf(o);
+    }
+
+    @Override
+    public int lastIndexOf(Object o) {
+        return rabbit.lastIndexOf(o);
+    }
+
+    @Override
+    public ListIterator<K> listIterator() {
+        return rabbit.listIterator();
+    }
+
+    @Override
+    public ListIterator<K> listIterator(int index) {
+        return rabbit.listIterator(index);
+    }
+
+    @Override
+    public List<K> subList(int fromIndex, int toIndex) {
+        return rabbit.subList(fromIndex, toIndex);
+    }
 }
