@@ -88,12 +88,24 @@ class MagicList<K> implements List<K> {
         this.rabbit = rabbit;
     }
 
-    public <T> List<T> map(Function<? super K, T> f) {
-        return ListUtils.map(rabbit, f);
+    public <T> MagicList<T> map(Function<? super K, T> f) {
+       return new MagicList<>(ListUtils.map(rabbit, f));
     }
 
     public <T> T fold(T base, BinFunction<T, K, T> f) {
         return ListUtils.fold(base, f, rabbit);
+    }
+
+    public void swap(int i, int j) {
+        Collections.swap(rabbit, i, j);
+    }
+
+    public void reverse() {
+        Collections.reverse(rabbit);
+    }
+
+    public int binarySearch(K key, Comparator<? super K> comp) {
+       return Collections.binarySearch(rabbit, key, comp);
     }
 
     @Override
