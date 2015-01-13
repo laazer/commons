@@ -2,6 +2,7 @@ package com.laazer.common.collections;
 
 import static org.junit.Assert.*;
 import com.laazer.common.util.TestUtils;
+import com.laazer.common.functions.Functions;
 import org.junit.Test;
 
 
