@@ -15,7 +15,7 @@ public class MagicList<K> implements List<K> {
     }
 
     public <T> MagicList<T> map(Function<? super K, T> f) {
-        return new MagicList<>(ListUtils.map(rabbit, f));
+        return new MagicList<T>(ListUtils.map(rabbit, f));
     }
 
     public <T> T fold(T base, BinFunction<T, K, T> f) {

@@ -2,17 +2,13 @@ package com.laazer.common.util;
 
 import com.google.common.base.Function;
 import com.laazer.common.collections.ListUtils;
-import com.laazer.common.functions.BinFunction;
-import com.laazer.common.functions.Functions;
-import com.sun.beans.editors.NumberEditor;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
- * Created by Intern on 8/17/2014.
+ * Created by laazer
  */
 public class TimeTest  {
     private static long createdAt;

@@ -20,6 +20,7 @@ public class BoxSpec {
     Box<String>  empty1;
     Box<Integer> empty2;
     Box<Object> empty3;
+    Box<String> batbox;
 
     public void init() {
         stringBox = Box.fill("abc");
@@ -28,6 +29,7 @@ public class BoxSpec {
         integerBox = Box.fill(1);
         integerBox2 = Box.fill(1);
         integerBox3 = Box.fill(3);
+        batbox = Box.fill("Bat Man!");
         empty1 = Box.EMPTY;
         empty2 = Box.EMPTY;
         empty3 = Box.EMPTY;
@@ -81,4 +83,23 @@ public class BoxSpec {
         assertEquals(integerBox.get(), new Integer(1));
         TestUtils.assertException(empty1.isFull(), "Empty Box");
     }
+
+    @Test
+    public void testGetOrElse() {
+        init();
+        assertEquals(empty1.getOrElse("abc"), "abc");
+        assertEquals(empty2.getOrElse("abc"), "abc");
+        assertEquals(stringBox.getOrElse("abc"), "abc");
+        assertEquals(integerBox.getOrElse("abc"), 1);
+    }
+
+    @Test
+    public void testGetOrElseKeepType() {
+        init();
+        assertEquals(empty1.getOrElseKeepType("abc"), "abc");
+        assertEquals(empty2.getOrElseKeepType(3), new Integer(3));
+        assertEquals(stringBox.getOrElseKeepType("abc"), "abc");
+        assertEquals(integerBox.getOrElseKeepType(3), new Integer(1));
+    }
+
 }

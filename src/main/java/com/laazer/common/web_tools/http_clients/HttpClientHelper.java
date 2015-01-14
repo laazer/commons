@@ -31,7 +31,7 @@ public class HttpClientHelper {
 
         // add request header
         request.addHeader("User-Agent", USER_AGENT);
-        if (authToken.isPresent()) {
+        if (authToken.isFull()) {
             request.addHeader("Authorization", "Bearer" + authToken.get());
             HttpResponse response = client.execute(request);
 
@@ -58,7 +58,7 @@ public class HttpClientHelper {
     }
 
     public static void sendGet(String url) throws Exception{
-        sendGet(url, Box.empty());
+        sendGet(url, Box.EMPTY);
     }
 
     /**
@@ -79,7 +79,7 @@ public class HttpClientHelper {
                 case GET: request = new HttpGet(url); break;
             }
             // add header
-            if(json.isPresent()) {
+            if(json.isFull()) {
                 StringEntity params =new StringEntity(json.get());
                 request.addHeader("content-type", "application/json");
                 ((HttpPost)request).setEntity(params);
@@ -90,7 +90,7 @@ public class HttpClientHelper {
                 urlParameters.add(pair);
             }
             if (!urlParameters.isEmpty()) ((HttpPost)request).setEntity(new UrlEncodedFormEntity(urlParameters));
-            if (authToken.isPresent()) {
+            if (authToken.isFull()) {
                 request.addHeader("Authorization", "Bearer " + authToken.get());
 
             }
@@ -109,7 +109,7 @@ public class HttpClientHelper {
 //            return Box.fill(result.toString());
             return Box.fill(response);
         }catch (Exception e) {
-            return Box.empty();
+            return Box.EMPTY;
         }
     }
 
@@ -118,27 +118,27 @@ public class HttpClientHelper {
     }
 
     public static Box<HttpResponse> executePostJson(String url, String json, NameValuePair... pairs) {
-        return executeRequest(url, HttpVal.POST, Box.fill(json), Box.empty(), pairs);
+        return executeRequest(url, HttpVal.POST, Box.fill(json), Box.EMPTY, pairs);
     }
 
     public static Box<HttpResponse> executePost(String url, String authToken, NameValuePair... pairs) {
-        return executeRequest(url, HttpVal.POST, Box.empty(), Box.fill(authToken), pairs);
+        return executeRequest(url, HttpVal.POST, Box.EMPTY, Box.fill(authToken), pairs);
     }
 
     public static Box<HttpResponse> executePost(String url, NameValuePair... pairs) {
-        return executeRequest(url, HttpVal.POST, Box.empty(), Box.empty(), pairs);
+        return executeRequest(url, HttpVal.POST, Box.EMPTY, Box.EMPTY, pairs);
     }
 
     public static Box<HttpResponse> executeGet(String url, String authToken, NameValuePair... pairs) {
-        return executeRequest(url, HttpVal.GET, Box.empty(), Box.fill(authToken), pairs);
+        return executeRequest(url, HttpVal.GET, Box.EMPTY, Box.fill(authToken), pairs);
     }
 
     public static Box<HttpResponse> executeGet(String url, NameValuePair... pairs) {
-        return executeRequest(url, HttpVal.GET, Box.empty(), Box.empty(), pairs);
+        return executeRequest(url, HttpVal.GET, Box.EMPTY, Box.EMPTY, pairs);
     }
 
     public static Box<HttpResponse> executeGet(String url) {
-        return executeRequest(url, HttpVal.GET, Box.empty(), Box.empty());
+        return executeRequest(url, HttpVal.GET, Box.EMPTY, Box.EMPTY);
     }
 
     /**

@@ -3,7 +3,6 @@ package com.laazer.common.web_tools;
 import java.io.*;
 import com.laazer.common.collections.Box;
 import java.net.URL;
-
 import javax.net.ssl.HttpsURLConnection;
 
 public class UrlManager {

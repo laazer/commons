@@ -1,7 +1,7 @@
-package java.main.com.laazer.common.web_tools;
+package com.laazer.common.web_tools;
 
-import java.main.com.laazer.common.collections.Box;
-import java.main.com.laazer.common.collections.ListUtils;
+import com.laazer.common.collections.Box;
+import com.laazer.common.collections.ListUtils;
 import java.util.ArrayList;
 import java.util.List;
 import com.google.gson.JsonArray;

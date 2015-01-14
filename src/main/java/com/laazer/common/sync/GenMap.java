@@ -8,7 +8,7 @@ import java.util.Set;
  * a synchronized map
  */
 public class GenMap<K, V> implements Map<K, V> {
-    private Map<K, V> map = new HashMap<>();
+    private Map<K, V> map = new HashMap<K,V>();
     private final Object Lock = new Object();
 
     @Override
