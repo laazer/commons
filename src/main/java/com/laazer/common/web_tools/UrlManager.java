@@ -5,6 +5,11 @@ import com.laazer.common.collections.Box;
 import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 
+
+/**
+ * A HTTP Client that doesn't require org.apache. At some point
+ * I'll add POST.
+ */
 public class UrlManager {
     public static Box<String> executeGet(String target) {
         Box<String> result = Box.EMPTY;

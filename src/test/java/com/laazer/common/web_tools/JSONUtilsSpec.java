@@ -2,7 +2,7 @@ package com.laazer.common.web_tools;
 
 import org.junit.Test;
 
-import java.main.com.laazer.common.web_tools.JSONUtils;
+import com.laazer.common.web_tools.JSONUtils;
 
 public class JSONUtilsSpec {
 

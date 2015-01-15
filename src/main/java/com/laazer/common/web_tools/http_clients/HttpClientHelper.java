@@ -182,7 +182,7 @@ public class HttpClientHelper {
      * @return true if the given {@code String} url is of valid format
      */
     public static boolean isValidUrl(String url) {
-        String[] schemes = {"http","https", "ftp"};
+        String[] schemes = {"http","https", "ftp", "sftp"};
         UrlValidator urlValidator = new UrlValidator(schemes);
         return urlValidator.isValid(url);
     }

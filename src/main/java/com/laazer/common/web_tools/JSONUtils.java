@@ -6,14 +6,18 @@ import java.util.ArrayList;
 import java.util.List;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.oracle.javafx.jmx.json.JSONException;
 import com.google.common.base.Function;
 
+
+/**
+ * My little experiment with custom json tools.
+ * Best to use something else...
+ */
 public class JSONUtils {
     
     public static Function<Object, JsonObject> toJSONObject = new ToJSONObject();
     
-    public static List<Object> jArrayToList(JsonArray jarray) throws JSONException {
+    public static List<Object> jArrayToList(JsonArray jarray) {
         List<Object> jlist = new ArrayList<Object>();
         for(int i = 0; i < jarray.size(); i++){
            jlist.add((Object) jarray.get(i));
@@ -21,7 +25,7 @@ public class JSONUtils {
         return jlist;        
     }
     
-    public static <R> List<R> mappedList(JsonArray jarray, Function<Object, R> f) throws JSONException {
+    public static <R> List<R> mappedList(JsonArray jarray, Function<Object, R> f) {
         return ListUtils.map(JSONUtils.jArrayToList(jarray), f);
     }
     
@@ -41,11 +45,11 @@ public class JSONUtils {
         
     }
     
-    public static List<String> jArrayToList(String s) throws JSONException {
+    public static List<String> jArrayToList(String s) throws JSONException{
         List<String> jlist = new ArrayList<String>();
         Boolean dquote = false;
         char fChar = s.charAt(1);
-        if (!(s.charAt(0) == '[' && s.charAt(s.length() - 1) == ']')) throw new JSONException("Poorly formatted array", 1, 1);
+        if (!(s.charAt(0) == '[' && s.charAt(s.length() - 1) == ']')) throw new JSONException("Poorly formatted array");
         for(int i = 1; i < s.length() - 1; i++) {  
             String tmp = "";
             if (s.charAt(i) == fChar ) dquote = !dquote;
@@ -62,11 +66,22 @@ public class JSONUtils {
     public static Box<List<String>> safeJArrayToList(String s) {
         try {
             return Box.fill(jArrayToList(s));
-        }catch (JSONException e) {
+        }catch (Exception e) {
             System.out.println(e);
             return Box.EMPTY;
         }
         
     }
-    
+
+}
+
+class JSONException extends Exception
+{
+    public JSONException() {}
+
+    //Constructor that accepts a message
+    public JSONException(String message)
+    {
+        super(message);
+    }
 }
