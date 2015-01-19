@@ -8,20 +8,15 @@ import com.laazer.common.collections.ListUtils;
 
 public class FunctionSpec {
 
-    String s1 = "the quick brown fox yadda yadda";
-    String s2 = "for the win";
-    String s3 = "i have to pee";
-    List<String> l1 = ListUtils.arrayToList(s1, s2, s3);  
-    
     @Test
     public void testUniFunctions() {
-        assertTrue(Functions.toBoolean.apply("true"));
-        assertTrue(!Functions.toBoolean.apply("false"));
+        assertTrue("test to boolean, true", Functions.toBoolean.apply("true"));
+        assertTrue("test to boolean, false", !Functions.toBoolean.apply("false"));
        
     }
     
     @Test 
     public void testBinFunctions() {
-        assertTrue(Functions.add.apply(1, 2).equals(3));
+        assertTrue("add 1 and 2", Functions.add.apply(1, 2).equals(3));
     }
 }

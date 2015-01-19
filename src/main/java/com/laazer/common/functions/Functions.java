@@ -78,7 +78,7 @@ public class Functions {
         private class Append1 implements Function<List<T>, List<T>> {
             List<T> x;
             Append1(List<T> x) {
-                x = x;
+                this.x = x;
             }
             @Override
             public List<T> apply(List<T> value) {
@@ -98,7 +98,7 @@ public class Functions {
         private class Equals1 implements Function<Object, Boolean> {
             Object x;
             Equals1(Object x) {
-                x = x;
+                this.x = x;
             }
             @Override
             public Boolean apply(Object value) {
@@ -116,7 +116,7 @@ public class Functions {
         private class Multiply1 implements Function<Integer, Integer> {
             Integer x;
             Multiply1(Integer x) {
-                x = x;
+                this.x = x;
             }
             @Override
             public Integer apply(Integer value) {
@@ -134,7 +134,7 @@ public class Functions {
         private class MultiplyL1 implements Function<Long, Long> {
             Long x;
             MultiplyL1(Long x) {
-                x = x;
+                this.x = x;
             }
             @Override
             public Long apply(Long value) {
@@ -152,7 +152,7 @@ public class Functions {
         private class MultiplyD1 implements Function<Double, Double> {
             Double x;
             MultiplyD1(Double x) {
-                x = x;
+                this.x = x;
             }
             @Override
             public Double apply(Double value) {
@@ -170,7 +170,7 @@ public class Functions {
         private class Add1 implements Function<Integer, Integer> {
             Integer x;
             Add1(Integer x) {
-                x = x;
+                this.x = x;
             }
             @Override
             public Integer apply(Integer value) {
