@@ -89,7 +89,7 @@ public class BoxSpec {
         init();
         assertEquals("test getOrElse on empty string", empty1.getOrElse("abc"), "abc");
         assertEquals("test getOrElse on empty empty", empty2.getOrElse("abc"), "abc");
-        assertEquals("test getOrElse on full string," stringBox.getOrElse("abc"), "abc");
+        assertEquals("test getOrElse on full string,", stringBox.getOrElse("abc"), "abc");
         assertEquals("test getOrElse on full int", integerBox.getOrElse("abc"), 1);
     }
 
