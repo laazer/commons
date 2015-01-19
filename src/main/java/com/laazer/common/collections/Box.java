@@ -128,6 +128,8 @@ class Full<T> extends Box<T> {
     private T cat;
     public Full(T cat) {this.cat = cat;}
     @Override
+    public boolean isEmpty() {return false;}
+    @Override
     public boolean isFull() {return true;}
     @Override
     public <B> Box<? extends B> map(Function<? super T, ? extends B> f) {
