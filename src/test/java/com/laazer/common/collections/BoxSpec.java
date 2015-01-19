@@ -38,68 +38,68 @@ public class BoxSpec {
     @Test
     public void testEquals() {
         init();
-        assertTrue(empty1.equals(empty2));
-        assertTrue(empty2.equals(empty1));
-        assertTrue(stringBox.equals(stringBox2));
-        assertTrue(!stringBox.equals(stringBox3));
-        assertTrue(integerBox.equals(integerBox2));
-        assertTrue(!integerBox.equals(integerBox3));
+        assertTrue("empty equals empty", empty1.equals(empty2));
+        assertTrue("empty equals empty", empty2.equals(empty1));
+        assertTrue("box containing same contests are equal", stringBox.equals(stringBox2));
+        assertTrue("box containing diff contests are equal", !stringBox.equals(stringBox3));
+        assertTrue("box containing same contests are equal", integerBox.equals(integerBox2));
+        assertTrue("box containing diff contests are equal", !integerBox.equals(integerBox3));
     }
 
     @Test
     public void testToString() {
         init();
-        assertTrue(empty1.toString().equals("Box[]"));
-        assertTrue(stringBox.toString().equals("Box[abc]"));
-        assertTrue(integerBox.toString().equals("Box[1]"));
+        assertTrue("empty box toString", empty1.toString().equals("Box[]"));
+        assertTrue("full string box toString", stringBox.toString().equals("Box[abc]"));
+        assertTrue("full int box toString", integerBox.toString().equals("Box[1]"));
     }
 
     @Test
     public void testMap() {
         init();
-        assertEquals(empty3.map(Functions.toString), empty3);
-        assertEquals(integerBox.map(Functions.toString), Box.fill("1"));
-        assertEquals(Box.fill("true").map(Functions.toBoolean), Box.fill(true));
+        assertEquals("empty box map", empty3.map(Functions.toString), empty3);
+        assertEquals("full int box map", integerBox.map(Functions.toString), Box.fill("1"));
+        assertEquals("full string box map", Box.fill("true").map(Functions.toBoolean), Box.fill(true));
     }
 
     @Test
     public void testIsEmpty() {
         init();
-        assertTrue(empty1.isEmpty());
-        assertFalse(stringBox.isEmpty());
+        assertTrue("empty box is empty", empty1.isEmpty());
+        assertFalse("full box is not empty", stringBox.isEmpty());
     }
 
     @Test
     public void testIsFull() {
         init();
-        assertFalse(empty1.isFull());
-        assertTrue(stringBox.isFull());
+        assertFalse("empty box is not full", empty1.isFull());
+        assertTrue("full box is full", stringBox.isFull());
     }
 
     @Test
     public void testGet() {
         init();
-        assertEquals(stringBox.get(), "abc");
-        assertEquals(integerBox.get(), new Integer(1));
-        TestUtils.assertException(empty1.isFull(), "Empty Box");
+        assertEquals("get string from full string box", stringBox.get(), "abc");
+        assertEquals("get int from full int box", integerBox.get(), new Integer(1));
+        TestUtils.assertException("exception on get with empty", empty1.get().equals("anything"), "Empty Box");
     }
 
     @Test
     public void testGetOrElse() {
         init();
-        assertEquals(empty1.getOrElse("abc"), "abc");
-        assertEquals(empty2.getOrElse("abc"), "abc");
-        assertEquals(stringBox.getOrElse("abc"), "abc");
-        assertEquals(integerBox.getOrElse("abc"), 1);
+        assertEquals("test getOrElse on empty string", empty1.getOrElse("abc"), "abc");
+        assertEquals("test getOrElse on empty empty", empty2.getOrElse("abc"), "abc");
+        assertEquals("test getOrElse on full string," stringBox.getOrElse("abc"), "abc");
+        assertEquals("test getOrElse on full int", integerBox.getOrElse("abc"), 1);
     }
 
     @Test
     public void testGetOrElseKeepType() {
         init();
-        assertEquals(empty1.getOrElseKeepType("abc"), "abc");
-        assertEquals(empty2.getOrElseKeepType(3), new Integer(3));
-        assertEquals(stringBox.getOrElseKeepType("abc"), "abc");
-        assertEquals(integerBox.getOrElseKeepType(3), new Integer(1));
+        assertEquals("test getOrElseKeepType on string empty", empty1.getOrElseKeepType("abc"), "abc");
+        assertEquals("test getOrElseKeepType on int empty", empty2.getOrElseKeepType(3), new Integer(3));
+        assertEquals("test getOrElseKeepType on string full", stringBox.getOrElseKeepType("abc"), "abc");
+        assertEquals("test getOrElseKeepType on int full", integerBox.getOrElseKeepType(3), new Integer(1));
     }
 
 }
