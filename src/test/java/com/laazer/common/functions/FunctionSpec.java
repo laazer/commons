@@ -11,9 +11,11 @@ import com.laazer.common.functions.Functions;
 public class FunctionSpec {
 
     Function<Object, Boolean> eq1;
+    Function<Object, Boolean> eq2;
 
     private void init(){
         eq1 =  Functions.equals.toUniFun("abc");
+        eq2 = Functions.toUniFunction(Functions.equals, "abc");
     }
 
     @Test
@@ -33,13 +35,15 @@ public class FunctionSpec {
     public void testToUniFunction() {
         init();
         assertTrue("abc = abc, with Functions equal", Functions.equals.apply("abc", "abc"));
-        assertTrue("abc = abc, with UniFunction", eq1.apply("abc"));
+        assertTrue("abc = abc, with toUniFunction method", eq1.apply("abc"));
+        assertTrue("abc = abc, with toUniFunction function", eq2.apply("abc"));
     }
 
     @Test
     public void testToPredicate() {
         init();
-        Predicate<Object> eq2 = Functions.toPredicate(eq1);
-        assertTrue("test toPredicate", eq1.apply("abc") && eq2.apply("abc"));
+        Predicate<Object> eq3 = Functions.toPredicate(eq1);
+        assertTrue("test toPredicate", eq1.apply("abc") && eq2.apply("abc")
+                                       && eq3.apply("abc"));
     }
 }
