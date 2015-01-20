@@ -1,7 +1,9 @@
 package com.laazer.common.collections;
 
 import java.util.*;
+import com.google.common.base.Function;
 import com.google.common.base.Predicate;
+import com.laazer.common.functions.Functions;
 
 /**
  * A class that contains specialty methods for handling Collections.
@@ -138,6 +140,10 @@ public class CollectionUtil {
             if (!predicate.apply(t)) collection.remove(t);
         }
         return collection;
+    }
+
+    public static <T> Collection<T> filter(Collection<T> collection, Function<T, Boolean> predicate) {
+        return CollectionUtil.filter(collection, Functions.toPredicate(predicate));
     }
 
     public static int maxListSize(Collection<Collection> cs) {
