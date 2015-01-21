@@ -1,8 +1,9 @@
 package com.laazer.common.functions;
 
 import static org.junit.Assert.*;
-import java.util.List;
 
+import java.util.Arrays;
+import java.util.List;
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 import org.junit.Test;
@@ -10,8 +11,9 @@ import com.laazer.common.functions.Functions;
 
 public class FunctionSpec {
 
-    Function<Object, Boolean> eq1;
-    Function<Object, Boolean> eq2;
+    private Function<Object, Boolean> eq1;
+    private Function<Object, Boolean> eq2;
+
 
     private void init(){
         eq1 =  Functions.equals.toUniFun("abc");
@@ -46,4 +48,5 @@ public class FunctionSpec {
         assertTrue("test toPredicate", eq1.apply("abc") && eq2.apply("abc")
                                        && eq3.apply("abc"));
     }
+
 }

@@ -41,7 +41,16 @@ public class Functions {
     private static class ToInt implements Function<Object, Integer> {
         @Override
         public Integer apply(Object value) {
-            return Integer.parseInt(value.toString());
+            String v = value.toString().toLowerCase();
+            if (v.contains("l")) {
+                return (int)Long.parseLong(v);
+            }
+            else if(v.contains(".")) {
+                return (int)Math.round(Double.parseDouble(v));
+            }
+            else {
+                return Integer.parseInt(v);
+            }
         }
     }
     
@@ -67,26 +76,6 @@ public class Functions {
 
     public static <X, Y, Z> Function<Y, Z> toUniFunction(BinFunction<X, Y, Z> function, X value) {
         return function.toUniFun(value);
-    }
-
-    public static BinFunction<List, List, List> append = Functions.toBinFunction(new Append());
-    private static class Append<T> implements Function<List<T>, Function<List<T>, List<T>>> {
-        @Override
-        public Function<List<T>, List<T>> apply(List<T> value) {
-            return new Append1(value);
-        }
-        private class Append1 implements Function<List<T>, List<T>> {
-            List<T> x;
-            Append1(List<T> x) {
-                this.x = x;
-            }
-            @Override
-            public List<T> apply(List<T> value) {
-                List<T> result = new ArrayList<T>();
-                result.addAll(x); result.addAll(value);
-                return result;
-            }
-        }
     }
 
     public static BinFunction<Object, Object, Boolean> equals = Functions.toBinFunction(new Equals());

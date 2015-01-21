@@ -11,16 +11,16 @@ import org.junit.Test;
  */
 public class BoxSpec {
 
-    Box<String> stringBox;
-    Box<String> stringBox2;
-    Box<String> stringBox3;
-    Box<Integer> integerBox;
-    Box<Integer> integerBox2;
-    Box<Integer> integerBox3;
-    Box<String>  empty1;
-    Box<Integer> empty2;
-    Box<Object> empty3;
-    Box<String> batbox;
+    private Box<String> stringBox;
+    private Box<String> stringBox2;
+    private Box<String> stringBox3;
+    private Box<Integer> integerBox;
+    private Box<Integer> integerBox2;
+    private Box<Integer> integerBox3;
+    private Box<String>  empty1;
+    private Box<Integer> empty2;
+    private Box<Object> empty3;
+    private Box<String> batbox;
 
     public void init() {
         stringBox = Box.fill("abc");

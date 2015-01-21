@@ -23,7 +23,7 @@ public class MagicList<K> implements List<K> {
     }
 
     public MagicList<K> filter(Predicate<K> f) {
-        rabbit = (List<K>)CollectionUtil.filter(this.rabbit, f);
+        rabbit = (List<K>) CollectionUtils.filter(this.rabbit, f);
         return this;
     }
 

@@ -26,14 +26,6 @@ public class ListUtils {
         return result;
     }
 
-    public static <T> List<T> arrayToList(T... array) {
-        List<T> list = new ArrayList<T>();
-        for(int i = 0; i < array.length; i++) {
-            list.add(array[i]);
-        }
-        return list;
-    }
-
     public static <K, T> T fold(T base, BinFunction<T, K, T> f, List<K> list) {
         if(list.isEmpty()) {return base;}
         else {
@@ -41,10 +33,24 @@ public class ListUtils {
             return fold(f.apply(base, tmp), f, list);
         }
     }
-    private static class ToSame<T> implements Function<T, T> {
+
+    public static BinFunction<List, List, List> append = Functions.toBinFunction(new Append());
+    private static class Append<T> implements Function<List<T>, Function<List<T>, List<T>>> {
         @Override
-        public T apply(T value) {
-            return value;
+        public Function<List<T>, List<T>> apply(List<T> value) {
+            return new Append1(value);
+        }
+        private class Append1 implements Function<List<T>, List<T>> {
+            List<T> x;
+            Append1(List<T> x) {
+                this.x = x;
+            }
+            @Override
+            public List<T> apply(List<T> value) {
+                List<T> result = new ArrayList<T>();
+                result.addAll(x); result.addAll(value);
+                return result;
+            }
         }
     }
 
