@@ -1,6 +1,9 @@
 package com.laazer.common.collections;
 
-import java.util.Map;
+import com.google.common.base.Function;
+import com.google.common.base.Predicate;
+
+import java.util.*;
 
 /**
  * Class that contains utilities for Java {@code Map}
@@ -38,4 +41,46 @@ public class MapUtils {
        else return false;
     }
 
+    public <K,V, T> Map<K, T> mapValues(Map<K,V> map, Function<? super V, T> f) {
+        Map<K, T> result = new HashMap<K,T>();
+        for (K key : map.keySet()) {
+            result.put(key, f.apply(map.get(key)));
+        }
+        return result;
+    }
+
+    public <K,V> Pair<K,V> getPair(Map<K,V> map, K key) {
+        return new Pair<K,V>(key, map.get(key));
+    }
+
+    public <K,V> Set<Pair<K,V>> toPairSet(Map<K,V> map) {
+        Set<Pair<K,V>> result = new HashSet<Pair<K,V>>();
+        for (K key : map.keySet()) {
+            result.add(getPair(map, key));
+        }
+        return result;
+    }
+
+    public <K,V> List<Pair<K,V>> toPairList(Map<K,V> map) {
+        List<Pair<K,V>> result = new ArrayList<Pair<K, V>>();
+        for (K key : map.keySet()) {
+            while(map.containsKey(key)) {
+                result.add(getPair(map, key));
+                map.remove(key);
+            }
+        }
+        return result;
+    }
+
+    public <K,V> Map<K,V> toMap(Collection<Pair<K,V>> collection) {
+        Map<K, V> map = new HashMap<K, V>();
+        for (Pair<K,V> p : collection) {
+            map.put(p.getKey(), p.getValue());
+        }
+        return map;
+    }
+
+    public <K,V> Map<K,V> filter(Map<K,V> map, Predicate<? super Pair<K, V>> pred) {
+        return toMap(CollectionUtils.filter(toPairList(map), pred));
+    }
 }
