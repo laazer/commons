@@ -121,7 +121,7 @@ public class MagicList<K> implements List<K> {
 
     @Override
     public void add(int index, K element) {
-
+        this.rabbit.add(index, element);
     }
 
     @Override
@@ -152,5 +152,20 @@ public class MagicList<K> implements List<K> {
     @Override
     public List<K> subList(int fromIndex, int toIndex) {
         return rabbit.subList(fromIndex, toIndex);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if(o == null) return false;
+        else if (o instanceof List) {
+            List list = (List)o;
+            return list.equals(this.rabbit);
+        }
+        else return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.rabbit.hashCode();
     }
 }

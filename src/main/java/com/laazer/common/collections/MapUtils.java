@@ -83,4 +83,5 @@ public class MapUtils {
     public static <K,V> Map<K,V> filter(Map<K,V> map, Predicate<? super Entry<K, V>> pred) {
         return toMap(CollectionUtils.filter(pairList(map), pred));
     }
+
 }
