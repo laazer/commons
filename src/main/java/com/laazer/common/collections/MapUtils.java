@@ -72,15 +72,15 @@ public class MapUtils {
         return pairList(map);
     }
 
-    public static <K,V> Map<K,V> toMap(Collection<KVPair<K,V>> collection) {
+    public static <K,V> Map<K,V> toMap(Collection<? extends Entry<K,V>> collection) {
         Map<K, V> map = new HashMap<K, V>();
-        for (KVPair<K,V> p : collection) {
+        for (Entry<K,V> p : collection) {
             map.put(p.getKey(), p.getValue());
         }
         return map;
     }
 
-    public static  <K,V> Map<K,V> filter(Map<K,V> map, Predicate<? super KVPair<K, V>> pred) {
+    public static <K,V> Map<K,V> filter(Map<K,V> map, Predicate<? super Entry<K, V>> pred) {
         return toMap(CollectionUtils.filter(pairList(map), pred));
     }
 }
