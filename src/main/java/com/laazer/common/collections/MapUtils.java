@@ -2,8 +2,8 @@ package com.laazer.common.collections;
 
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
-
 import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * Class that contains utilities for Java {@code Map}
@@ -22,17 +22,7 @@ public class MapUtils {
         else return map.put(key, value);
     }
 
-    public boolean remove(Map map, Object key) {
-        try {
-            Object o = map.get(key);
-            if(o == null) return true;
-            return (map.remove(key) != null);
-        } catch (NullPointerException e) {
-            return false;
-        }
-    }
-
-    public <K,V> boolean replace(Map<K,V> map, K key, V oldValue, V newValue) {
+    public static  <K,V> boolean replace(Map<K,V> map, K key, V oldValue, V newValue) {
        V v = map.get(key);
        if(v.equals(oldValue)) {
            map.put(key, newValue);
@@ -41,7 +31,7 @@ public class MapUtils {
        else return false;
     }
 
-    public <K,V, T> Map<K, T> mapValues(Map<K,V> map, Function<? super V, T> f) {
+    public static <K,V, T> Map<K, T> mapValues(Map<K,V> map, Function<? super V, T> f) {
         Map<K, T> result = new HashMap<K,T>();
         for (K key : map.keySet()) {
             result.put(key, f.apply(map.get(key)));
@@ -49,11 +39,15 @@ public class MapUtils {
         return result;
     }
 
-    public <K,V> KVPair<K,V> getPair(Map<K,V> map, K key) {
+    public static <K,V> KVPair<K,V> getPair(Map<K,V> map, K key) {
         return new KVPair<K,V>(key, map.get(key));
     }
 
-    public <K,V> Set<KVPair<K,V>> toPairSet(Map<K,V> map) {
+    public static <K,V> Entry<K,V> getEntry(Map<K, V> map , K key) {
+        return getPair(map, key);
+    }
+
+    public static <K,V> Set<KVPair<K,V>> pairSet(Map<K,V> map) {
         Set<KVPair<K,V>> result = new HashSet<KVPair<K,V>>();
         for (K key : map.keySet()) {
             result.add(getPair(map, key));
@@ -61,7 +55,7 @@ public class MapUtils {
         return result;
     }
 
-    public <K,V> List<KVPair<K,V>> toPairList(Map<K,V> map) {
+    public static <K,V> List<KVPair<K,V>> pairList(Map<K,V> map) {
         List<KVPair<K,V>> result = new ArrayList<KVPair<K, V>>();
         Map<K,V> lmap = new HashMap<K, V>();
         lmap.putAll(map);
@@ -74,7 +68,11 @@ public class MapUtils {
         return result;
     }
 
-    public <K,V> Map<K,V> toMap(Collection<KVPair<K,V>> collection) {
+    public static <K,V> List<? extends Entry<K,V>> entryList(Map<K,V> map) {
+        return pairList(map);
+    }
+
+    public static <K,V> Map<K,V> toMap(Collection<KVPair<K,V>> collection) {
         Map<K, V> map = new HashMap<K, V>();
         for (KVPair<K,V> p : collection) {
             map.put(p.getKey(), p.getValue());
@@ -82,7 +80,7 @@ public class MapUtils {
         return map;
     }
 
-    public <K,V> Map<K,V> filter(Map<K,V> map, Predicate<? super KVPair<K, V>> pred) {
-        return toMap(CollectionUtils.filter(toPairList(map), pred));
+    public static  <K,V> Map<K,V> filter(Map<K,V> map, Predicate<? super KVPair<K, V>> pred) {
+        return toMap(CollectionUtils.filter(pairList(map), pred));
     }
 }

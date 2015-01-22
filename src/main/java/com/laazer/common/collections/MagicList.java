@@ -10,8 +10,8 @@ import java.util.*;
  */
 public class MagicList<K> implements List<K> {
     List<K> rabbit;
-    public MagicList(List<K> rabbit) {
-        this.rabbit = rabbit;
+    public MagicList(List<K> list) {
+        this.rabbit = list;
     }
 
     public <T> MagicList<T> map(Function<? super K, T> f) {
