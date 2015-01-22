@@ -49,38 +49,40 @@ public class MapUtils {
         return result;
     }
 
-    public <K,V> Pair<K,V> getPair(Map<K,V> map, K key) {
-        return new Pair<K,V>(key, map.get(key));
+    public <K,V> KVPair<K,V> getPair(Map<K,V> map, K key) {
+        return new KVPair<K,V>(key, map.get(key));
     }
 
-    public <K,V> Set<Pair<K,V>> toPairSet(Map<K,V> map) {
-        Set<Pair<K,V>> result = new HashSet<Pair<K,V>>();
+    public <K,V> Set<KVPair<K,V>> toPairSet(Map<K,V> map) {
+        Set<KVPair<K,V>> result = new HashSet<KVPair<K,V>>();
         for (K key : map.keySet()) {
             result.add(getPair(map, key));
         }
         return result;
     }
 
-    public <K,V> List<Pair<K,V>> toPairList(Map<K,V> map) {
-        List<Pair<K,V>> result = new ArrayList<Pair<K, V>>();
-        for (K key : map.keySet()) {
-            while(map.containsKey(key)) {
-                result.add(getPair(map, key));
-                map.remove(key);
+    public <K,V> List<KVPair<K,V>> toPairList(Map<K,V> map) {
+        List<KVPair<K,V>> result = new ArrayList<KVPair<K, V>>();
+        Map<K,V> lmap = new HashMap<K, V>();
+        lmap.putAll(map);
+        for (K key : lmap.keySet()) {
+            while(lmap.containsKey(key)) {
+                result.add(getPair(lmap, key));
+                lmap.remove(key);
             }
         }
         return result;
     }
 
-    public <K,V> Map<K,V> toMap(Collection<Pair<K,V>> collection) {
+    public <K,V> Map<K,V> toMap(Collection<KVPair<K,V>> collection) {
         Map<K, V> map = new HashMap<K, V>();
-        for (Pair<K,V> p : collection) {
+        for (KVPair<K,V> p : collection) {
             map.put(p.getKey(), p.getValue());
         }
         return map;
     }
 
-    public <K,V> Map<K,V> filter(Map<K,V> map, Predicate<? super Pair<K, V>> pred) {
+    public <K,V> Map<K,V> filter(Map<K,V> map, Predicate<? super KVPair<K, V>> pred) {
         return toMap(CollectionUtils.filter(toPairList(map), pred));
     }
 }
