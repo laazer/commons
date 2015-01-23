@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.015" errors="0" skipped="0" tests="4" name="com.laazer.common.functions.FunctionSpec">
+<testsuite failures="0" time="0.005" errors="0" skipped="0" tests="4" name="com.laazer.common.functions.FunctionSpec">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home/jre/lib"/>
@@ -59,8 +59,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.004" classname="com.laazer.common.functions.FunctionSpec" name="testBinFunctions"/>
+  <testcase time="0" classname="com.laazer.common.functions.FunctionSpec" name="testBinFunctions"/>
   <testcase time="0" classname="com.laazer.common.functions.FunctionSpec" name="testUniFunctions"/>
   <testcase time="0.002" classname="com.laazer.common.functions.FunctionSpec" name="testToPredicate"/>
-  <testcase time="0" classname="com.laazer.common.functions.FunctionSpec" name="testToUniFunction"/>
+  <testcase time="0.001" classname="com.laazer.common.functions.FunctionSpec" name="testToUniFunction"/>
 </testsuite>

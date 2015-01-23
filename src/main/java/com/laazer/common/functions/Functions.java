@@ -33,7 +33,15 @@ public class Functions {
     private static class ToDouble implements Function<Object, Double> {
         @Override
         public Double apply(Object value) {
-            return (Double) value;
+            if (value instanceof String) {
+                return Double.parseDouble(value.toString());
+            }
+            else if (value instanceof Number){
+                return ((Number)value).doubleValue();
+            }
+            else {
+                return (Double)value;
+            }
         }
     }
     

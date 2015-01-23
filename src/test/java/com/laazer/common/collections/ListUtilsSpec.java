@@ -21,6 +21,7 @@ public class ListUtilsSpec {
     private List<String> los3;
     private List<String> losb;
     private List<String> losi;
+    private List<String> losd;
     private List<Boolean> lob;
     private List<Integer> loi;
     private List<Integer> loi2;
@@ -35,6 +36,7 @@ public class ListUtilsSpec {
         losb = Arrays.asList("true", "false", "true");
         lob = Arrays.asList(true, false, true);
         losi = Arrays.asList("1", "2", "3");
+        losd = Arrays.asList("1.2", "2.12", "3.44");
         loi = Arrays.asList(1, 2, 3);
         loi2 = Arrays.asList(3, 4, 5);
         loi3 = Arrays.asList(1, 2, 3, 3, 4, 5);
@@ -68,5 +70,18 @@ public class ListUtilsSpec {
         assertEquals("test to int list from doubles", ListUtils.toIntList.apply(lod1), loi);
     }
 
+    @Test
+    public void testToStringList() {
+        init();
+        assertEquals("test double list from ints", ListUtils.toDoubleList.apply(loi), lod2);
+        assertEquals("test double list from strings", ListUtils.toStringList.apply(lob), losb);
+    }
+
+    @Test
+    public void testToDoubleList() {
+        init();
+        assertEquals("test double list from strings", ListUtils.toDoubleList.apply(losd), lod1);
+        assertEquals("test double list from ints", ListUtils.toDoubleList.apply(loi), lod2);
+    }
 
 }
