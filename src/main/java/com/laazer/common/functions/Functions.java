@@ -49,15 +49,14 @@ public class Functions {
     private static class ToInt implements Function<Object, Integer> {
         @Override
         public Integer apply(Object value) {
-            String v = value.toString().toLowerCase();
-            if (v.contains("l")) {
-                return (int)Long.parseLong(v);
+            if (value instanceof String) {
+                return Integer.parseInt(value.toString());
             }
-            else if(v.contains(".")) {
-                return (int)Math.round(Double.parseDouble(v));
+            else if (value instanceof Number){
+                return ((Number)value).intValue();
             }
             else {
-                return Integer.parseInt(v);
+                return (Integer)value;
             }
         }
     }
@@ -172,6 +171,24 @@ public class Functions {
             @Override
             public Integer apply(Integer value) {
                 return x + value;
+            }
+        }
+    }
+
+    public static BinFunction<Number, Number, Number> addN = Functions.toBinFunction(new AddN());
+    private static class AddN implements Function<Number, Function<Number, Number>> {
+        @Override
+        public Function<Number, Number> apply(Number value) {
+            return new Add1(value);
+        }
+        private class Add1 implements Function<Number, Number> {
+            Number x;
+            Add1(Number x) {
+                this.x = x;
+            }
+            @Override
+            public Number apply(Number value) {
+                return (Number)(x.doubleValue() + value.doubleValue());
             }
         }
     }
