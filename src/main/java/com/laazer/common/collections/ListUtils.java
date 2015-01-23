@@ -1,6 +1,5 @@
 package com.laazer.common.collections;
 
-import com.google.common.base.Predicate;
 import com.laazer.common.functions.BinFunction;
 import com.laazer.common.functions.Functions;
 
@@ -15,7 +14,7 @@ public class ListUtils {
     }
 
     public static Integer sum(List<Integer> list) {
-        return ListUtils.fold(0, Functions.add, list);
+        return ListUtils.fold(0, Functions.addi, list);
     }
 
     public static <K, T> List<T> map(List<? extends K> list, Function<? super K, T> f) {

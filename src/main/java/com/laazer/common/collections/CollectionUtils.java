@@ -43,10 +43,10 @@ public class CollectionUtils {
     }
 
     /**
-     * Extension to the add method that adds an {@code Array} of Objects of type
+     * Extension to the addi method that adds an {@code Array} of Objects of type
      * {@code T} to the given {@code Collection} of {@code T}
      * @param collection the Collection of type {@code Collection}
-     * @param ts the {@code Collection} of objects to add to the given {@code Collection}
+     * @param ts the {@code Collection} of objects to addi to the given {@code Collection}
      * @param <T> the given {@code Collection} Type
      */
     public static <T> void addCollection(Collection<T> collection, T... ts) {
@@ -65,7 +65,7 @@ public class CollectionUtils {
     }
 
     /**
-     * Uses the given {@code Collection}'s add method to add a value to the given {@code Collection}
+     * Uses the given {@code Collection}'s addi method to addi a value to the given {@code Collection}
      * @param collection a given {@code Collection} of type {@code T}
      * @param value a given value of type {@code T}
      * @param <T> the type of {@code Collection} and value
@@ -77,7 +77,7 @@ public class CollectionUtils {
     }
 
     /**
-     * Uses the given {@code Collection}'s add method to add a value to the given {@code Collection}
+     * Uses the given {@code Collection}'s addi method to addi a value to the given {@code Collection}
      * @param collection a given {@code Collection} of type {@code T}
      * @param values a given value of type {@code T}
      * @param <T> the type of {@code Collection} and value
@@ -89,7 +89,7 @@ public class CollectionUtils {
     }
 
     /**
-     * Uses the given {@code Collection}'s add method to add a value to the given {@code Collection}
+     * Uses the given {@code Collection}'s addi method to addi a value to the given {@code Collection}
      * @param collection a given {@code Collection} of type {@code T}
      * @param index the given index put put the given value
      * @param value a given value of type {@code T}

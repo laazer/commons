@@ -103,37 +103,19 @@ public class Functions {
         }
     }
 
-    public static BinFunction<Integer, Integer, Integer> mult = Functions.toBinFunction(new Multiply());
-    private static class Multiply implements Function<Integer, Function<Integer, Integer>> {
+    public static BinFunction<Integer, Integer, Integer> multi = Functions.toBinFunction(new MultiplyI());
+    private static class MultiplyI implements Function<Integer, Function<Integer, Integer>> {
         @Override
         public Function<Integer, Integer> apply(Integer value) {
-            return new Multiply1(value);
+            return new MultiplyI1(value);
         }
-        private class Multiply1 implements Function<Integer, Integer> {
+        private class MultiplyI1 implements Function<Integer, Integer> {
             Integer x;
-            Multiply1(Integer x) {
+            MultiplyI1(Integer x) {
                 this.x = x;
             }
             @Override
             public Integer apply(Integer value) {
-                return x * value;
-            }
-        }
-    }
-
-    public static BinFunction<Long, Long, Long> multL = Functions.toBinFunction(new MultiplyL());
-    private static class MultiplyL implements Function<Long, Function<Long, Long>> {
-        @Override
-        public Function<Long, Long> apply(Long value) {
-            return new MultiplyL1(value);
-        }
-        private class MultiplyL1 implements Function<Long, Long> {
-            Long x;
-            MultiplyL1(Long x) {
-                this.x = x;
-            }
-            @Override
-            public Long apply(Long value) {
                 return x * value;
             }
         }
@@ -157,15 +139,33 @@ public class Functions {
         }
     }
 
-    public static BinFunction<Integer, Integer, Integer> add = Functions.toBinFunction(new Add());
-    private static class Add implements Function<Integer, Function<Integer, Integer>> {
+    public static BinFunction<Number, Number, Number> mult = Functions.toBinFunction(new MultiplyN());
+    private static class MultiplyN implements Function<Number, Function<Number, Number>> {
+        @Override
+        public Function<Number, Number> apply(Number value) {
+            return new MultiplyN1(value);
+        }
+        private class MultiplyN1 implements Function<Number, Number> {
+            Number x;
+            MultiplyN1(Number x) {
+                this.x = x;
+            }
+            @Override
+            public Number apply(Number value) {
+                return (Number)(x.doubleValue() * value.doubleValue());
+            }
+        }
+    }
+
+    public static BinFunction<Integer, Integer, Integer> addi = Functions.toBinFunction(new AddI());
+    private static class AddI implements Function<Integer, Function<Integer, Integer>> {
         @Override
         public Function<Integer, Integer> apply(Integer value) {
-            return new Add1(value);
+            return new AddI1(value);
         }
-        private class Add1 implements Function<Integer, Integer> {
+        private class AddI1 implements Function<Integer, Integer> {
             Integer x;
-            Add1(Integer x) {
+            AddI1(Integer x) {
                 this.x = x;
             }
             @Override
@@ -175,7 +175,7 @@ public class Functions {
         }
     }
 
-    public static BinFunction<Number, Number, Number> addN = Functions.toBinFunction(new AddN());
+    public static BinFunction<Number, Number, Number> add = Functions.toBinFunction(new AddN());
     private static class AddN implements Function<Number, Function<Number, Number>> {
         @Override
         public Function<Number, Number> apply(Number value) {

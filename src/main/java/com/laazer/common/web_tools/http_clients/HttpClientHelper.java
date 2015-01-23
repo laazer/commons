@@ -29,7 +29,7 @@ public class HttpClientHelper {
         HttpClient client = new DefaultHttpClient();
         HttpGet request = new HttpGet(url);
 
-        // add request header
+        // addi request header
         request.addHeader("User-Agent", USER_AGENT);
         if (authToken.isFull()) {
             request.addHeader("Authorization", "Bearer" + authToken.get());
@@ -78,7 +78,7 @@ public class HttpClientHelper {
                 case POST: request = new HttpPost(url); break;
                 case GET: request = new HttpGet(url); break;
             }
-            // add header
+            // addi header
             if(json.isFull()) {
                 StringEntity params =new StringEntity(json.get());
                 request.addHeader("content-type", "application/json");

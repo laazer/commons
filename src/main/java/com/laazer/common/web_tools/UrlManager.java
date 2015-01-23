@@ -8,7 +8,7 @@ import javax.net.ssl.HttpsURLConnection;
 
 /**
  * A HTTP Client that doesn't require org.apache. At some point
- * I'll add POST.
+ * I'll addi POST.
  */
 public class UrlManager {
     public static Box<String> executeGet(String target) {
