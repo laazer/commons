@@ -14,6 +14,10 @@ public class MagicList<K> implements List<K> {
         this.rabbit = list;
     }
 
+    public MagicList(K... items) {
+        this.rabbit = Arrays.asList(items);
+    }
+
     public <T> MagicList<T> map(Function<? super K, T> f) {
         return new MagicList<T>(ListUtils.map(rabbit, f));
     }
