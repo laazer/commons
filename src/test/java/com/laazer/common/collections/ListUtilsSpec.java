@@ -83,5 +83,4 @@ public class ListUtilsSpec {
         assertEquals("test double list from strings", ListUtils.toDoubleList.apply(losd), lod1);
         assertEquals("test double list from ints", ListUtils.toDoubleList.apply(loi), lod2);
     }
-
 }

@@ -9,13 +9,6 @@ import com.google.common.base.Function;
 
 public class ListUtils {
 
-    public static <T> MagicList<T> magic(List<T> stuffing) {
-        return new MagicList(stuffing);
-    }
-
-    public static Integer sum(List<Integer> list) {
-        return ListUtils.fold(0, Functions.addi, list);
-    }
 
     public static <K, T> List<T> map(List<? extends K> list, Function<? super K, T> f) {
         List<T> result = new ArrayList<T>();
@@ -25,7 +18,7 @@ public class ListUtils {
         return result;
     }
 
-    public static <K, T> T fold(T base, BinFunction<T, K, T> f, List<K> list) {
+    public static <K, T> T fold(T base, BinFunction<T, K, T> f, List<? extends K> list) {
         if(list.isEmpty()) {return base;}
         else {
             K tmp = list.remove(0);

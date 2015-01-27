@@ -3,6 +3,7 @@ package com.laazer.common.collections;
 import java.util.*;
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
+import com.laazer.common.functions.BinFunction;
 import com.laazer.common.functions.Functions;
 
 /**
@@ -22,7 +23,7 @@ public class CollectionUtils {
     public static <T> String lineSeparatedCollection(Collection<T> collection) {
         StringBuffer sb = new StringBuffer("");
         for (T item : collection) {
-            sb = sb.append(item.toString()).append(LINE_SEPARATOR);
+            sb.append(item.toString()).append(LINE_SEPARATOR);
         }
         return sb.deleteCharAt(sb.lastIndexOf(LINE_SEPARATOR)).toString();
     }
@@ -36,95 +37,9 @@ public class CollectionUtils {
     public static <T> String lineSeparatedCollection(T... collection) {
         StringBuffer sb = new StringBuffer("");
         for (T item : collection) {
-            sb = sb.append(item.toString()).append(LINE_SEPARATOR);
-            sb = sb.append(item.toString()).append(System.getProperty("line.separator"));
+            sb.append(item.toString()).append(LINE_SEPARATOR);
         }
         return sb.deleteCharAt(sb.lastIndexOf(LINE_SEPARATOR)).toString();
-    }
-
-    /**
-     * Extension to the addi method that adds an {@code Array} of Objects of type
-     * {@code T} to the given {@code Collection} of {@code T}
-     * @param collection the Collection of type {@code Collection}
-     * @param ts the {@code Collection} of objects to addi to the given {@code Collection}
-     * @param <T> the given {@code Collection} Type
-     */
-    public static <T> void addCollection(Collection<T> collection, T... ts) {
-        for (T t : ts) { collection.add(t); }
-    }
-
-    /**
-     * Extension to the remove method that removes an {@code Array} of Objects of type
-     * {@code T} from the given {@code Collection} of {@code T}
-     * @param collection the Collection of type {@code Collection}
-     * @param ts the collection of objects to remove from the given {@code Collection}
-     * @param <T> the given {@code Collection} Type
-     */
-    public static <T> void removeCollection(Collection<T> collection, T... ts) {
-        for (T t : ts) { collection.remove(t); }
-    }
-
-    /**
-     * Uses the given {@code Collection}'s addi method to addi a value to the given {@code Collection}
-     * @param collection a given {@code Collection} of type {@code T}
-     * @param value a given value of type {@code T}
-     * @param <T> the type of {@code Collection} and value
-     * @return the given {@code Collection} with the given value added to it
-     */
-    public static <T> Collection<T> addAndReturn(Collection<T> collection, T value) {
-        collection.add(value);
-        return collection;
-    }
-
-    /**
-     * Uses the given {@code Collection}'s addi method to addi a value to the given {@code Collection}
-     * @param collection a given {@code Collection} of type {@code T}
-     * @param values a given value of type {@code T}
-     * @param <T> the type of {@code Collection} and value
-     * @return the given {@code Collection} with the given values added to it
-     */
-    public static <T> Collection<T> addCollectionAndReturn(Collection<T> collection, T... values) {
-        for (T t : values) { collection.add(t); }
-        return collection;
-    }
-
-    /**
-     * Uses the given {@code Collection}'s addi method to addi a value to the given {@code Collection}
-     * @param collection a given {@code Collection} of type {@code T}
-     * @param index the given index put put the given value
-     * @param value a given value of type {@code T}
-     * @param <T> the type of {@code Collection} and value
-     * @return the given {@code Collection} with the given value added to it
-     */
-    public static <T> Collection<T> addAndReturn(Collection<T> collection, int index, T value) {
-        ((List<T>)collection).add(index, value);
-        return (Collection<T>) collection;
-    }
-
-    /**
-     * A non-void version of the {@code Collections} reverse method that works on any
-     * given {@code Collection}
-     * @param collection a given {@code Collection}
-     * @param <T>
-     * @return the given {@code Collection} with all elements in reverse order
-     */
-    public static <T> Collection<T> reverse(Collection<T> collection) {
-        List<T> result = new ArrayList<T>(collection);
-        Collections.reverse(result);
-        return result;
-    }
-
-    /**
-     * Converts the given {@code Collection} into an {@code Array} of the type {@code T}
-     * @param collection a given {@code Collection} of type {@code T}
-     * @param <T> the {@code Collection} type
-     * @return an {@code Array} of type {@code T}
-     */
-    public static <T> T[] toArray(Collection<T> collection) {
-        Object[] result = new Object[collection.size()];
-        int i = 0;
-        for(T t : collection) { result[i] = t; i++; }
-        return (T[]) result;
     }
 
     /**
@@ -146,18 +61,13 @@ public class CollectionUtils {
         return CollectionUtils.filter(collection, Functions.toPredicate(predicate));
     }
 
-    public static int maxListSize(Collection<Collection> cs) {
+    public static int largestList(Collection<? extends Collection> cs) {
         if (cs.isEmpty()) return -1;
         int large = 0;
         for (Collection c : cs) {
-            large = Math.max(0, c.size());
+            large = Math.max(large, c.size());
         }
         return large;
-    }
-
-    public static int maxListSize(Collection... cs) {
-        if (cs.length <= 0) return -1;
-        else return maxListSize(cs[0], cs);
     }
 
     public static int maxListSize(Collection c1, Collection... cs) {
@@ -168,7 +78,17 @@ public class CollectionUtils {
         return large;
     }
 
-    private static int maxListSize(Collection c1, Collection c2) {
-        return Math.max(c1.size(), c2.size());
+    public static <K, T> T fold(T base, BinFunction<T, K, T> f, Collection<? extends K> collection) {
+        Iterator<? extends K> iterator = collection.iterator();
+        K tmp;
+        while (iterator.hasNext()) {
+            tmp = iterator.next();
+            base = f.apply(base, tmp);
+        }
+        return base;
+    }
+
+    public static Number sum(Collection<? extends Number> collection) {
+        return CollectionUtils.fold(0, Functions.add, collection);
     }
 }

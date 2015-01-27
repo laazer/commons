@@ -23,7 +23,7 @@ public class MagicList<K> implements List<K> {
     }
 
     public <T> T fold(T base, BinFunction<T, K, T> f) {
-        return ListUtils.fold(base, f, rabbit);
+        return CollectionUtils.fold(base, f, rabbit);
     }
 
     public MagicList<K> filter(Predicate<K> f) {
