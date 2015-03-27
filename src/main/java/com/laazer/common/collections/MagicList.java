@@ -7,6 +7,8 @@ import java.util.*;
 
 /**
  * Created by laazer on
+ * Java List wrapper that contains more functionality then
+ * the built in List
  */
 public class MagicList<K> implements List<K> {
     List<K> rabbit;
