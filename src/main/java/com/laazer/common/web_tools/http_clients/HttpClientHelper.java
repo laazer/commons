@@ -78,7 +78,7 @@ public class HttpClientHelper {
                 case POST: request = new HttpPost(url); break;
                 case GET: request = new HttpGet(url); break;
             }
-            // addi header
+            // add header
             if(json.isFull()) {
                 StringEntity params =new StringEntity(json.get());
                 request.addHeader("content-type", "application/json");
@@ -98,15 +98,6 @@ public class HttpClientHelper {
             //request.addHeader("Accept", "application/x-www-form-urlencoded");
             HttpResponse response = client.execute(request);
 
-//            BufferedReader rd = new BufferedReader(
-//                    new InputStreamReader(response.getEntity().getContent()));
-//
-//            StringBuffer result = new StringBuffer();
-//            String line = "";
-//            while ((line = rd.readLine()) != null) {
-//                result.append(line);
-//            }
-//            return Box.fill(result.toString());
             return Box.fill(response);
         }catch (Exception e) {
             return Box.EMPTY;
