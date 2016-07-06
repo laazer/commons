@@ -13,7 +13,7 @@ public class FunctionSpec {
 
 
     private void init(){
-        eq1 =  Functions.equals.toUniFun("abc");
+        eq1 =  Functions.equals.toUnaryFunction("abc");
         eq2 = Functions.toUniFunction(Functions.equals, "abc");
     }
 

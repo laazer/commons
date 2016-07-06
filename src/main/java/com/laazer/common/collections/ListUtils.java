@@ -2,10 +2,8 @@ package com.laazer.common.collections;
 
 import com.laazer.common.functions.BinFunction;
 import com.laazer.common.functions.Functions;
-
+import com.laazer.common.functions.Function;
 import java.util.*;
-
-import com.google.common.base.Function;
 
 public class ListUtils {
 

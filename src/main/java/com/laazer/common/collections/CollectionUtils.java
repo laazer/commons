@@ -1,9 +1,9 @@
 package com.laazer.common.collections;
 
 import java.util.*;
-import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 import com.laazer.common.functions.BinFunction;
+import com.laazer.common.functions.Function;
 import com.laazer.common.functions.Functions;
 
 /**
@@ -50,8 +50,9 @@ public class CollectionUtils {
      * @return
      */
     public static <T> Collection<T> filter(Collection<T> collection, Predicate<? super T> predicate) {
-        Collection<T> tmpCol = collection;
-        for (T t : tmpCol) {
+        Collection<T> tmpCol = new ArrayList<T>();
+        tmpCol.addAll(collection);
+        for (T t : collection) {
             if (!predicate.apply(t)) collection.remove(t);
         }
         return collection;
@@ -61,7 +62,7 @@ public class CollectionUtils {
         return CollectionUtils.filter(collection, Functions.toPredicate(predicate));
     }
 
-    public static int largestList(Collection<? extends Collection> cs) {
+    public static int maxListSize(Collection<? extends Collection> cs) {
         if (cs.isEmpty()) return -1;
         int large = 0;
         for (Collection c : cs) {
@@ -88,7 +89,19 @@ public class CollectionUtils {
         return base;
     }
 
+    public static <K, T> T foldR(T base, BinFunction<T, K, T> f, Collection<? extends K> collection) {
+        Object[] arr = collection.toArray();
+        for (int i = arr.length - 1; i >= 0; i--) {
+            base = f.apply(base, (K)arr[i]);
+        }
+        return base;
+    }
+
     public static Number sum(Collection<? extends Number> collection) {
         return CollectionUtils.fold(0, Functions.add, collection);
+    }
+
+    public static Number product(Collection<? extends Number> collection) {
+        return CollectionUtils.fold(1, Functions.mult, collection);
     }
 }

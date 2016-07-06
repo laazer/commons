@@ -57,7 +57,7 @@ public abstract class Box <T> {
         if(this.isFull()) return this.get();
         else return o;
     }
-    /** Trys to get what's in inside the box but if the box
+    /** Tries to get what's in inside the box but if the box
      * is empty returns the default object. this will
      * never change the return type.
      * @param t default object

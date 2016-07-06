@@ -16,23 +16,19 @@ public class KVPair<K,V> implements Entry<K,V>{
         this.value = value;
     }
 
-    @Override
     public K getKey() {
         return key;
     }
-
-    @Override
+    
     public V getValue() {
         return value;
     }
-
-    @Override
+    
     public V setValue(V value) {
         this.value = value;
         return this.value;
     }
 
-    @Override
     public boolean equals(Object o) {
         if(o == null) return false;
         else if(o  instanceof Entry) {
@@ -43,7 +39,7 @@ public class KVPair<K,V> implements Entry<K,V>{
         else return false;
     }
 
-    @Override
+    
     public int hashCode() {
         return (key.hashCode() * 11) * (value.hashCode()/7);
     }
