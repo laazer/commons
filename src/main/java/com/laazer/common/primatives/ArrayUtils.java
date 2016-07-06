@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class ArrayUtils {
 
-    public static List<Integer> toIntList(int[] arr) {
+    public static List<Integer> toList(int[] arr) {
         List<Integer> res = new ArrayList<Integer>(arr.length);
         for(Integer i : iterable(arr)) {
             res.add(i);
@@ -33,11 +33,113 @@ public class ArrayUtils {
         return new PrimIntArrIterator(arr);
     }
 
+    /*************************************************************************/
 
+    public static List<Short> toList(short[] arr) {
+        List<Short> res = new ArrayList<Short>(arr.length);
+        for(Short i : iterable(arr)) {
+            res.add(i);
+        }
+        return res;
+    }
+
+    public static short[] toShortArray(List<Short> list) {
+        short[] res = new short[list.size()];
+        for(int i = 0; i < list.size(); i++) {
+            res[i] = list.get(i);
+        }
+        return res;
+    }
+
+    public static Iterator<Short> iterator(short[] arr) {
+        return new PrimShortArrIterator(arr);
+    }
+
+    public static Iterable<Short> iterable(short[] arr) {
+        return new PrimShortArrIterator(arr);
+    }
 
     /*************************************************************************/
 
-    public static List<Character> toCharList(char[] arr) {
+    public static List<Long> toList(long[] arr) {
+        List<Long> res = new ArrayList<Long>(arr.length);
+        for(Long i : iterable(arr)) {
+            res.add(i);
+        }
+        return res;
+    }
+
+    public static long[] toLongArray(List<Long> list) {
+        long[] res = new long[list.size()];
+        for(int i = 0; i < list.size(); i++) {
+            res[i] = list.get(i);
+        }
+        return res;
+    }
+
+    public static Iterator<Long> iterator(long[] arr) {
+        return new PrimLongArrIterator(arr);
+    }
+
+    public static Iterable<Long> iterable(long[] arr) {
+        return new PrimLongArrIterator(arr);
+    }
+
+    /*************************************************************************/
+
+    public static List<Float> toList(float[] arr) {
+        List<Float> res = new ArrayList<Float>(arr.length);
+        for(Float i : iterable(arr)) {
+            res.add(i);
+        }
+        return res;
+    }
+
+    public static float[] toFloatArray(List<Float> list) {
+        float[] res = new float[list.size()];
+        for(int i = 0; i < list.size(); i++) {
+            res[i] = list.get(i);
+        }
+        return res;
+    }
+
+    public static Iterator<Float> iterator(float[] arr) {
+        return new PrimFloatArrIterator(arr);
+    }
+
+    public static Iterable<Float> iterable(float[] arr) {
+        return new PrimFloatArrIterator(arr);
+    }
+
+    /*************************************************************************/
+
+    public static List<Double> toList(double[] arr) {
+        List<Double> res = new ArrayList<Double>(arr.length);
+        for(Double i : iterable(arr)) {
+            res.add(i);
+        }
+        return res;
+    }
+
+    public static double[] toDoubleArray(List<Double> list) {
+        double[] res = new double[list.size()];
+        for(int i = 0; i < list.size(); i++) {
+            res[i] = list.get(i);
+        }
+        return res;
+    }
+
+    public static Iterator<Double> iterator(double[] arr) {
+        return new PrimDoubleArrIterator(arr);
+    }
+
+    public static Iterable<Double> iterable(double[] arr) {
+        return new PrimDoubleArrIterator(arr);
+    }
+
+    /*************************************************************************/
+
+    public static List<Character> toList(char[] arr) {
         List<Character> res = new ArrayList<Character>(arr.length);
         for(Character i : iterable(arr)) {
             res.add(i);
@@ -59,6 +161,58 @@ public class ArrayUtils {
 
     public static Iterable<Character> iterable(char[] arr) {
         return new PrimCharArrIterator(arr);
+    }
+
+    /*************************************************************************/
+
+    public static List<Byte> toList(byte[] arr) {
+        List<Byte> res = new ArrayList<Byte>(arr.length);
+        for(Byte i : iterable(arr)) {
+            res.add(i);
+        }
+        return res;
+    }
+
+    public static byte[] toByteArray(List<Byte> list) {
+        byte[] res = new byte[list.size()];
+        for(int i = 0; i < list.size(); i++) {
+            res[i] = list.get(i);
+        }
+        return res;
+    }
+
+    public static Iterator<Byte> iterator(byte[] arr) {
+        return new PrimByteArrIterator(arr);
+    }
+
+    public static Iterable<Byte> iterable(byte[] arr) {
+        return new PrimByteArrIterator(arr);
+    }
+
+    /*************************************************************************/
+
+    public static List<Boolean> toList(boolean[] arr) {
+        List<Boolean> res = new ArrayList<Boolean>(arr.length);
+        for(Boolean i : iterable(arr)) {
+            res.add(i);
+        }
+        return res;
+    }
+
+    public static boolean[] toBoolArray(List<Boolean> list) {
+        boolean[] res = new boolean[list.size()];
+        for(int i = 0; i < list.size(); i++) {
+            res[i] = list.get(i);
+        }
+        return res;
+    }
+
+    public static Iterator<Boolean> iterator(boolean[] arr) {
+        return new PrimBoolArrIterator(arr);
+    }
+
+    public static Iterable<Boolean> iterable(boolean[] arr) {
+        return new PrimBoolArrIterator(arr);
     }
 
 }
@@ -92,6 +246,24 @@ class PrimIntArrIterator extends APrimIterator<Integer> {
     }
 
     public Integer next() {
+        return arr[i++];
+    }
+
+}
+
+class PrimShortArrIterator extends APrimIterator<Short> {
+
+    private short[] arr;
+    PrimShortArrIterator(short[] arr) {
+        super();
+        this.arr = arr;
+    }
+
+    public boolean hasNext() {
+        return i < arr.length;
+    }
+
+    public Short next() {
         return arr[i++];
     }
 
@@ -181,6 +353,23 @@ class PrimBoolArrIterator extends APrimIterator<Boolean> {
     }
 
     public Boolean next() {
+        return arr[i++];
+    }
+}
+
+class PrimByteArrIterator extends APrimIterator<Byte> {
+
+    private byte[] arr;
+    PrimByteArrIterator(byte[] arr) {
+        super();
+        this.arr = arr;
+    }
+
+    public boolean hasNext() {
+        return i < arr.length;
+    }
+
+    public Byte next() {
         return arr[i++];
     }
 }
