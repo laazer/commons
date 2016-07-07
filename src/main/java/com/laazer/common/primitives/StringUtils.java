@@ -1,6 +1,7 @@
 package com.laazer.common.primitives;
 
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -31,10 +32,11 @@ public class StringUtils {
         if (s.length() <= length) return s;
         try {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
-            messageDigest.update(s.getBytes());
+            messageDigest.update(s.getBytes(StandardCharsets.UTF_8));
             switch (digest) {
                 case HEX: return toHex(messageDigest.digest()).substring(0, length);
-                case BYTE_STRING: return new String(messageDigest.digest()).substring(0, length);
+                case BYTE_STRING: return new String(messageDigest.digest(),
+                        StandardCharsets.UTF_8).substring(0, length);
                 default: return toHex(messageDigest.digest()).substring(0, length);
             }
         } catch (NoSuchAlgorithmException nsa) {
