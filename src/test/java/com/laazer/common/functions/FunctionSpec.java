@@ -1,9 +1,6 @@
 package com.laazer.common.functions;
 
 import static org.junit.Assert.*;
-
-import com.google.common.base.Function;
-import com.google.common.base.Predicate;
 import org.junit.Test;
 
 public class FunctionSpec {

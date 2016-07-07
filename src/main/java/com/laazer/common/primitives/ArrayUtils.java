@@ -1,4 +1,4 @@
-package com.laazer.common.primatives;
+package com.laazer.common.primitives;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -147,8 +147,8 @@ public class ArrayUtils {
         return res;
     }
 
-    public static int[] toCharArray(List<Integer> list) {
-        int[] res = new int[list.size()];
+    public static char[] toCharArray(List<Character> list) {
+        char[] res = new char[list.size()];
         for(int i = 0; i < list.size(); i++) {
             res[i] = list.get(i);
         }

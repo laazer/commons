@@ -1,7 +1,8 @@
 package com.laazer.common.util;
 
-import com.google.common.base.Function;
 import com.laazer.common.collections.ListUtils;
+import com.laazer.common.functions.Function;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

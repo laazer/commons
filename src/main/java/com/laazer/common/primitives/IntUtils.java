@@ -1,4 +1,4 @@
-package com.laazer.common.primatives;
+package com.laazer.common.primitives;
 
 /**
  * Created by Dexter on 7/6/2016.

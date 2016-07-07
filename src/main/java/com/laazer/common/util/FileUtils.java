@@ -1,10 +1,6 @@
 package com.laazer.common.util;
 
 import java.io.*;
-import com.laazer.common.collections.Box;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Iterator;
 
 /**
@@ -33,6 +29,10 @@ public class FileUtils {
         BufferedReader br;
         String line;
 
+        public LineIterable(String path) {
+            this(new File(path));
+        }
+
         public LineIterable(File file) {
             try {
                 br = new BufferedReader(new FileReader(file));
@@ -44,12 +44,10 @@ public class FileUtils {
             }
         }
 
-        @Override
         public boolean hasNext() {
             return line != null;
         }
 
-        @Override
         public String next() {
             try {
                 String l = line;
@@ -59,33 +57,13 @@ public class FileUtils {
                 return "";
             }
         }
-
-        @Override
         public void remove() {
             throw new UnsupportedOperationException("this method is not currently supported");
         }
 
-        @Override
         public Iterator<String> iterator() {
             return this;
         }
     }
-
-    public static String readFile(String path, Charset encoding)
-            throws IOException
-    {
-        byte[] encoded = Files.readAllBytes(Paths.get(path));
-        return new String(encoded, encoding);
-    }
-
-    public static Box<String> safeReadFile(String path, Charset encoding) {
-        try {
-            byte[] encoded = Files.readAllBytes(Paths.get(path));
-            return Box.fill(new String(encoded, encoding));
-        } catch (IOException io) {
-            return Box.EMPTY;
-        }
-    }
-
 
 }

@@ -1,4 +1,4 @@
-package com.laazer.common.primatives;
+package com.laazer.common.primitives;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

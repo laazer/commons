@@ -1,7 +1,5 @@
 package com.laazer.common.functions;
 
-import com.google.common.base.Predicate;
-
 /**
  * Class containing common functions
  * @author Jacob
@@ -202,7 +200,7 @@ public class Functions {
         ToPredicate(Function<X, Boolean> foo){
             this.f = foo;
         }
-        public boolean apply(X x) {
+        public Boolean apply(X x) {
             return f.apply(x);
         }
     }
