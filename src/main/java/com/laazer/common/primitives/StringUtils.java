@@ -1,5 +1,6 @@
 package com.laazer.common.primitives;
 
+import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -19,9 +20,14 @@ public class StringUtils {
         try {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
             messageDigest.update(s.getBytes());
-            return new String(messageDigest.digest()).substring(0, length);
+            return toHex(messageDigest.digest()).substring(0, length);
         } catch (NoSuchAlgorithmException nsa) {
             return s;
         }
+    }
+
+    public static String toHex(byte[] bytes) {
+        BigInteger bi = new BigInteger(1, bytes);
+        return String.format("%0" + (bytes.length << 1) + "X", bi);
     }
 }

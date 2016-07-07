@@ -18,11 +18,11 @@ public class StringUtilsSpec {
 
     private void init() {
         test1 = "for bar biz baz";
-        res1 = "�;\u0006�+M��t�";
+        res1 = "E13B06A72B";
         test2 = "the quick brown fox jumped over the fence";
-        res2 = "ԚO�հO�Q�Ɲ!�`\u0019";
+        res2 = "D49A4F93D5B04";
         test3 = "can't touch this, dun dun dun dun dun dun cant touch this 2324 343";
-        res3 = "ԟ3�4�4^�P�ospM���";
+        res3 = "D49F33D534FD345E9";
     }
 
     @Test

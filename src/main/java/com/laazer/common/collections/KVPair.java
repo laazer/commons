@@ -38,7 +38,6 @@ public class KVPair<K,V> implements Entry<K,V>{
         }
         else return false;
     }
-
     
     public int hashCode() {
         return (key.hashCode() * 11) * (value.hashCode()/7);
