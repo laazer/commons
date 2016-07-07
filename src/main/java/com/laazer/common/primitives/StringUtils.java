@@ -21,7 +21,7 @@ public class StringUtils {
             messageDigest.update(s.getBytes());
             return new String(messageDigest.digest()).substring(0, length);
         } catch (NoSuchAlgorithmException nsa) {
-            return null;
+            return s;
         }
     }
 }
