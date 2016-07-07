@@ -69,22 +69,22 @@ public class Functions {
     }
 
     /**
-     * Transforms a {@code Function} into a {@code BinFunction}
+     * Transforms a {@code Function} into a {@code BinaryFunction}
      * @param function a given {@code Function}
      * @param <X> first input value type
      * @param <Y> second input value type
      * @param <Z> function return type
-     * @return a {@code BinFunction} representation of the given {@code Function}
+     * @return a {@code BinaryFunction} representation of the given {@code Function}
      */
-    public static <X, Y, Z> BinFunction<X, Y, Z> toBinFunction(Function<X, Function<Y, Z>> function) {
+    public static <X, Y, Z> BinaryFunction<X, Y, Z> toBinFunction(Function<X, Function<Y, Z>> function) {
         return new CompoundFunction(function);
     }
 
-    public static <X, Y, Z> Function<Y, Z> toUniFunction(BinFunction<X, Y, Z> function, X value) {
+    public static <X, Y, Z> Function<Y, Z> toUnaryFunction(BinaryFunction<X, Y, Z> function, X value) {
         return function.toUnaryFunction(value);
     }
 
-    public static BinFunction<Object, Object, Boolean> equals = Functions.toBinFunction(new Equals());
+    public static BinaryFunction<Object, Object, Boolean> equals = Functions.toBinFunction(new Equals());
     private static class Equals implements Function<Object, Function<Object, Boolean>> {
         
         public Function<Object, Boolean> apply(Object value) {
@@ -102,7 +102,7 @@ public class Functions {
         }
     }
 
-    public static BinFunction<Integer, Integer, Integer> multi = Functions.toBinFunction(new MultiplyI());
+    public static BinaryFunction<Integer, Integer, Integer> multi = Functions.toBinFunction(new MultiplyI());
     private static class MultiplyI implements Function<Integer, Function<Integer, Integer>> {
         
         public Function<Integer, Integer> apply(Integer value) {
@@ -120,7 +120,7 @@ public class Functions {
         }
     }
 
-    public static BinFunction<Double, Double, Double> multD = Functions.toBinFunction(new MultiplyD());
+    public static BinaryFunction<Double, Double, Double> multD = Functions.toBinFunction(new MultiplyD());
     private static class MultiplyD implements Function<Double, Function<Double, Double>> {
         
         public Function<Double, Double> apply(Double value) {
@@ -138,7 +138,7 @@ public class Functions {
         }
     }
 
-    public static BinFunction<Number, Number, Number> mult = Functions.toBinFunction(new MultiplyN());
+    public static BinaryFunction<Number, Number, Number> mult = Functions.toBinFunction(new MultiplyN());
     private static class MultiplyN implements Function<Number, Function<Number, Number>> {
         
         public Function<Number, Number> apply(Number value) {
@@ -156,7 +156,7 @@ public class Functions {
         }
     }
 
-    public static BinFunction<Integer, Integer, Integer> addi = Functions.toBinFunction(new AddI());
+    public static BinaryFunction<Integer, Integer, Integer> addi = Functions.toBinFunction(new AddI());
     private static class AddI implements Function<Integer, Function<Integer, Integer>> {
         
         public Function<Integer, Integer> apply(Integer value) {
@@ -174,7 +174,7 @@ public class Functions {
         }
     }
 
-    public static BinFunction<Number, Number, Number> add = Functions.toBinFunction(new AddN());
+    public static BinaryFunction<Number, Number, Number> add = Functions.toBinFunction(new AddN());
     private static class AddN implements Function<Number, Function<Number, Number>> {
         
         public Function<Number, Number> apply(Number value) {

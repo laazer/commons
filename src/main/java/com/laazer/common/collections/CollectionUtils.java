@@ -2,7 +2,7 @@ package com.laazer.common.collections;
 
 import java.util.*;
 import com.google.common.base.Predicate;
-import com.laazer.common.functions.BinFunction;
+import com.laazer.common.functions.BinaryFunction;
 import com.laazer.common.functions.Function;
 import com.laazer.common.functions.Functions;
 
@@ -79,7 +79,7 @@ public class CollectionUtils {
         return large;
     }
 
-    public static <K, T> T fold(T base, BinFunction<T, K, T> f, Collection<? extends K> collection) {
+    public static <K, T> T fold(T base, BinaryFunction<T, K, T> f, Collection<? extends K> collection) {
         Iterator<? extends K> iterator = collection.iterator();
         K tmp;
         while (iterator.hasNext()) {
@@ -89,7 +89,7 @@ public class CollectionUtils {
         return base;
     }
 
-    public static <K, T> T foldR(T base, BinFunction<T, K, T> f, Collection<? extends K> collection) {
+    public static <K, T> T foldR(T base, BinaryFunction<T, K, T> f, Collection<? extends K> collection) {
         Object[] arr = collection.toArray();
         for (int i = arr.length - 1; i >= 0; i--) {
             base = f.apply(base, (K)arr[i]);

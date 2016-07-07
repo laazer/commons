@@ -1,6 +1,6 @@
 package com.laazer.common.collections;
 
-import com.laazer.common.functions.BinFunction;
+import com.laazer.common.functions.BinaryFunction;
 import com.laazer.common.functions.Functions;
 import com.laazer.common.functions.Function;
 import java.util.*;
@@ -15,7 +15,7 @@ public class ListUtils {
         return result;
     }
 
-    public static <K, T> T fold(T base, BinFunction<T, K, T> f, List<? extends K> list) {
+    public static <K, T> T fold(T base, BinaryFunction<T, K, T> f, List<? extends K> list) {
         if(list.isEmpty()) {return base;}
         else {
             K tmp = list.remove(0);
@@ -23,7 +23,7 @@ public class ListUtils {
         }
     }
 
-    public static BinFunction<List, List, List> append = Functions.toBinFunction(new Append());
+    public static BinaryFunction<List, List, List> append = Functions.toBinFunction(new Append());
     private static class Append<T> implements Function<List<T>, Function<List<T>, List<T>>> {
         
         public Function<List<T>, List<T>> apply(List<T> value) {

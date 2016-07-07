@@ -1,6 +1,6 @@
 package com.laazer.common.collections;
 
-import com.laazer.common.functions.BinFunction;
+import com.laazer.common.functions.BinaryFunction;
 import com.laazer.common.functions.Function;
 import com.laazer.common.functions.Predicate;
 
@@ -25,7 +25,7 @@ public class MagicList<K> implements List<K> {
         return new MagicList<T>(ListUtils.map(rabbit, f));
     }
 
-    public <T> T fold(T base, BinFunction<T, K, T> f) {
+    public <T> T fold(T base, BinaryFunction<T, K, T> f) {
         return CollectionUtils.fold(base, f, rabbit);
     }
 

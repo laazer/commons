@@ -1,11 +1,11 @@
 package com.laazer.common.functions;
 
-public interface BinFunction<X, Y, Z> {
+public interface BinaryFunction<X, Y, Z> {
     public Z apply(X value1, Y value2);
     public Function<Y, Z> toUnaryFunction(X value);
 }
 
-class CompoundFunction<X, Y, Z> implements BinFunction<X, Y, Z> {
+class CompoundFunction<X, Y, Z> implements BinaryFunction<X, Y, Z> {
     private Function<X, Function<Y, Z>> f;
     public CompoundFunction(Function<X, Function<Y, Z>> f) {
         this.f = f;
