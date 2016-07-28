@@ -9,6 +9,27 @@ import java.util.List;
  */
 public class ArrayUtils {
 
+
+    public static void insert(int[] arr, int value) {
+        int tmp = value;
+        for(int i = 0; i < arr.length; i++) {
+            if (value < arr[i]) {
+                tmp = arr[i];
+                arr[i] = value;
+            }
+        }
+    }
+
+    public static void insert(char[] arr, char value) {
+        char tmp = value;
+        for(int i = 0; i < arr.length; i++) {
+            if (value < arr[i]) {
+                tmp = arr[i];
+                arr[i] = value;
+            }
+        }
+    }
+
     public static List<Integer> toList(int[] arr) {
         List<Integer> res = new ArrayList<Integer>(arr.length);
         for(Integer i : iterable(arr)) {
