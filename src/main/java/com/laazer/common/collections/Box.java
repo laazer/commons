@@ -27,7 +27,7 @@ public abstract class Box <T> {
      */
     public boolean isEmpty(){ return true;}
     
-    public final static Box EMPTY = Box.empty();
+    public final static Box EMPTY = Empty.getInstance();
     
     /**
      * maps the object inside the box by applying the given <code>Function</code>
