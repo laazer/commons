@@ -67,7 +67,7 @@ public abstract class Box <T> {
         else return t;
     }
     private static Box empty() {
-        return new Empty();
+        return EMPTY;
     }
     /**
      * Fills a <code>Box</code> with the given item
@@ -75,7 +75,7 @@ public abstract class Box <T> {
      * @return a filled <code>Box</code> reffered to as an 
      * instance of <code>Full</code>
      */
-    public static <K> Box<K> fill(K cat) {
+    public final static <K> Box<K> fill(K cat) {
        try { 
         return new Full<K>(cat);
        }
@@ -176,6 +176,15 @@ class Full<T> extends Box<T> {
 
 @SuppressWarnings("rawtypes")
 final class Empty extends Box {
+    private static Empty _instance = null;
+
+    protected static Empty getInstance() {
+        if (_instance == null) {
+            _instance = new Empty();
+        }
+        return _instance;
+    }
+
     @Override
     public boolean equals(Object o) {
         if(o == null) return false;

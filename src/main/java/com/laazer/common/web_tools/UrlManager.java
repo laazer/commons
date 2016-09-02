@@ -11,7 +11,7 @@ import javax.net.ssl.HttpsURLConnection;
  * I'll addi POST.
  */
 public class UrlManager {
-    public static Box<String> executeGet(String target) {
+    public final static Box<String> executeGet(String target) {
         Box<String> result = Box.EMPTY;
         try {
            String out = ""; 

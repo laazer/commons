@@ -7,7 +7,7 @@ import java.util.*;
 
 public class ListUtils {
 
-    public static <K, T> List<T> map(List<? extends K> list, Function<? super K, T> f) {
+    public final static <K, T> List<T> map(List<? extends K> list, Function<? super K, T> f) {
         List<T> result = new ArrayList<T>(list.size());
         for(int i = 0; i < list.size(); i++) {
             result.add(f.apply(list.get(i)));
@@ -15,7 +15,7 @@ public class ListUtils {
         return result;
     }
 
-    public static <K, T> T fold(T base, BinaryFunction<T, K, T> f, List<? extends K> list) {
+    public final static <K, T> T fold(T base, BinaryFunction<T, K, T> f, List<? extends K> list) {
         if(list.isEmpty()) {return base;}
         else {
             K tmp = list.remove(0);
@@ -23,7 +23,7 @@ public class ListUtils {
         }
     }
 
-    public static BinaryFunction<List, List, List> append = Functions.toBinFunction(new Append());
+    public final static BinaryFunction<List, List, List> append = Functions.toBinFunction(new Append());
     private static class Append<T> implements Function<List<T>, Function<List<T>, List<T>>> {
         
         public Function<List<T>, List<T>> apply(List<T> value) {
@@ -43,7 +43,7 @@ public class ListUtils {
         }
     }
 
-    public static Function<Object, List<Object>> toList = new ToList();
+    public final static Function<Object, List<Object>> toList = new ToList();
     private static class ToList implements Function<Object, List<Object>> {
         
         public List<Object> apply(Object value) {
@@ -52,7 +52,7 @@ public class ListUtils {
         
     }
     
-    public static Function<Object, List<String>> toStringList = new ToStringList();
+    public final static Function<Object, List<String>> toStringList = new ToStringList();
     private static class ToStringList implements Function<Object, List<String>> {
         
         public List<String> apply(Object value) {
@@ -60,7 +60,7 @@ public class ListUtils {
         }
     }
     
-    public static Function<Object, List<Integer>> toIntList = new ToIntList();
+    public final static Function<Object, List<Integer>> toIntList = new ToIntList();
     private static class ToIntList implements Function<Object, List<Integer>> {
         
         public List<Integer> apply(Object value) {
@@ -68,7 +68,7 @@ public class ListUtils {
         }
     }
 
-    public static Function<Object, List<Double>> toDoubleList = new ToDoubleList();
+    public final static Function<Object, List<Double>> toDoubleList = new ToDoubleList();
     private static class ToDoubleList implements Function<Object, List<Double>> {
         
         public List<Double> apply(Object value) {

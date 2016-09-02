@@ -20,7 +20,7 @@ public class CollectionUtils {
      * @param collection a given {@code Collection} of type {@code T}
      * @return
      */
-    public static <T> String lineSeparatedCollection(Collection<T> collection) {
+    public final static <T> String lineSeparatedCollection(Collection<T> collection) {
         StringBuffer sb = new StringBuffer("");
         for (T item : collection) {
             sb.append(item.toString()).append(LINE_SEPARATOR);
@@ -34,7 +34,7 @@ public class CollectionUtils {
      * @param collection a given {@code Array} of type {@code T}
      * @return
      */
-    public static <T> String lineSeparatedCollection(T... collection) {
+    public final static <T> String lineSeparatedCollection(T... collection) {
         StringBuffer sb = new StringBuffer("");
         for (T item : collection) {
             sb.append(item.toString()).append(LINE_SEPARATOR);
@@ -49,7 +49,7 @@ public class CollectionUtils {
      * @param <T>
      * @return
      */
-    public static <T> Collection<T> filter(Collection<T> collection, Predicate<? super T> predicate) {
+    public final static <T> Collection<T> filter(Collection<T> collection, Predicate<? super T> predicate) {
         Collection<T> tmpCol = new ArrayList<T>();
         tmpCol.addAll(collection);
         for (T t : collection) {
@@ -58,11 +58,11 @@ public class CollectionUtils {
         return collection;
     }
 
-    public static <T> Collection<T> filter(Collection<T> collection, Function<? super T, Boolean> predicate) {
+    public final static <T> Collection<T> filter(Collection<T> collection, Function<? super T, Boolean> predicate) {
         return CollectionUtils.filter(collection, Functions.toPredicate(predicate));
     }
 
-    public static int maxListSize(Collection<? extends Collection> cs) {
+    public final static int maxListSize(Collection<? extends Collection> cs) {
         if (cs.isEmpty()) return -1;
         int large = 0;
         for (Collection c : cs) {
@@ -71,7 +71,7 @@ public class CollectionUtils {
         return large;
     }
 
-    public static int maxListSize(Collection c1, Collection... cs) {
+    public final static int maxListSize(Collection c1, Collection... cs) {
         int large = c1.size();
         for (Collection c : cs) {
             large = Math.max(large, c.size());
@@ -79,7 +79,7 @@ public class CollectionUtils {
         return large;
     }
 
-    public static <K, T> T fold(T base, BinaryFunction<T, K, T> f, Collection<? extends K> collection) {
+    public final static <K, T> T fold(T base, BinaryFunction<T, K, T> f, Collection<? extends K> collection) {
         Iterator<? extends K> iterator = collection.iterator();
         K tmp;
         while (iterator.hasNext()) {
@@ -89,7 +89,7 @@ public class CollectionUtils {
         return base;
     }
 
-    public static <K, T> T foldR(T base, BinaryFunction<T, K, T> f, Collection<? extends K> collection) {
+    public final static <K, T> T foldR(T base, BinaryFunction<T, K, T> f, Collection<? extends K> collection) {
         Object[] arr = collection.toArray();
         for (int i = arr.length - 1; i >= 0; i--) {
             base = f.apply(base, (K)arr[i]);
@@ -97,11 +97,11 @@ public class CollectionUtils {
         return base;
     }
 
-    public static Number sum(Collection<? extends Number> collection) {
+    public final static Number sum(Collection<? extends Number> collection) {
         return CollectionUtils.fold(0, Functions.add, collection);
     }
 
-    public static Number product(Collection<? extends Number> collection) {
+    public final static Number product(Collection<? extends Number> collection) {
         return CollectionUtils.fold(1, Functions.mult, collection);
     }
 }

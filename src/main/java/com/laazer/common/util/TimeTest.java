@@ -17,7 +17,7 @@ public class TimeTest  {
     private static final Double MILLI_MULT = (Math.pow(10, -6));
     private static final Double SEC_MULT = (Math.pow(10, -9));
 
-    public static void start() {
+    public final static void start() {
         createdAt = System.nanoTime();
     }
 
@@ -31,11 +31,11 @@ public class TimeTest  {
         return res;
     }
 
-    public static List<Long> getTimes(String marker) {
+    public final static List<Long> getTimes(String marker) {
         return map.get(marker);
     }
 
-    public static Long getAvgTime(String marker) {
+    public final static Long getAvgTime(String marker) {
         Long total = 0L;
         for(Long l : map.get(marker)) {
             total += l;
@@ -55,45 +55,45 @@ public class TimeTest  {
         }
     }
 
-    public static List<Double> getTimesInMilli(String marker) {
+    public final static List<Double> getTimesInMilli(String marker) {
         return ListUtils.map(getTimes(marker), new MultMili());
     }
 
-    public static Double getAvgMilliTime(String marker) {
+    public final static Double getAvgMilliTime(String marker) {
         return getAvgTime(marker) * MILLI_MULT;
     }
 
-    public static List<Double> getTimesInSec(String marker) {
+    public final static List<Double> getTimesInSec(String marker) {
         return ListUtils.map(getTimes(marker), new MultSec());
     }
 
-    public static Double getAvgSecTime(String marker) {
+    public final static Double getAvgSecTime(String marker) {
         return getAvgTime(marker) * SEC_MULT;
     }
 
-    public static void printAvgTime(String marker) {
+    public final static void printAvgTime(String marker) {
         System.out.printf("%s: %f \n", marker, getAvgTime(marker));
     }
 
-    public static void printAvgMilliTime(String marker) {
+    public final static void printAvgMilliTime(String marker) {
         System.out.printf("%s: %f \n", marker, getAvgMilliTime(marker));
     }
 
-    public static void printAvgSecTime(String marker) {
+    public final static void printAvgSecTime(String marker) {
         System.out.printf("%s: %f \n", marker, getAvgSecTime(marker));
     }
 
-    public static void resetStartTime() {
+    public final static void resetStartTime() {
         createdAt = System.nanoTime();
     }
 
-    public static void printAllAvgTimes() {
+    public final static void printAllAvgTimes() {
         for (String key : map.keySet()) {
             printAvgMilliTime(key);
         }
     }
 
-    public static void totalReset() {
+    public final static void totalReset() {
         createdAt = System.nanoTime();
         map.clear();
     }

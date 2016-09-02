@@ -7,28 +7,28 @@ package com.laazer.common.functions;
  */
 public class Functions {
 
-    public static Function<Object, Object> identity = new Identity();
+    public final static Function<Object, Object> identity = new Identity();
     private static class Identity<X> implements Function<X, X> {
         public X apply(X value) {
             return value;
         }
     }
 
-    public static Function<Object, String> toString = new ToString();
+    public final static Function<Object, String> toString = new ToString();
     private static class ToString implements Function<Object, String> {
         public String apply(Object value) {
             return value.toString();
         }
     }
 
-    public static Function<Object, Integer> getHashCode = new GetHashCode();
+    public final static Function<Object, Integer> getHashCode = new GetHashCode();
     private static class GetHashCode implements Function<Object, Integer> {
         public Integer apply(Object value) {
             return toInt.apply(value.hashCode());
         }
     }
     
-    public static Function<Object, Double> toDouble = new ToDouble();
+    public final static Function<Object, Double> toDouble = new ToDouble();
     private static class ToDouble implements Function<Object, Double> {
         
         public Double apply(Object value) {
@@ -44,7 +44,7 @@ public class Functions {
         }
     }
     
-    public static Function<Object, Integer> toInt = new ToInt();
+    public final static Function<Object, Integer> toInt = new ToInt();
     private static class ToInt implements Function<Object, Integer> {
         
         public Integer apply(Object value) {
@@ -60,7 +60,7 @@ public class Functions {
         }
     }
     
-    public static Function<Object, Boolean> toBoolean = new ToBoolean();
+    public final static Function<Object, Boolean> toBoolean = new ToBoolean();
     private static class ToBoolean implements Function<Object, Boolean> {
         
         public Boolean apply(Object value) {
@@ -76,15 +76,15 @@ public class Functions {
      * @param <Z> function return type
      * @return a {@code BinaryFunction} representation of the given {@code Function}
      */
-    public static <X, Y, Z> BinaryFunction<X, Y, Z> toBinFunction(Function<X, Function<Y, Z>> function) {
+    public final static <X, Y, Z> BinaryFunction<X, Y, Z> toBinFunction(Function<X, Function<Y, Z>> function) {
         return new CompoundFunction(function);
     }
 
-    public static <X, Y, Z> Function<Y, Z> toUnaryFunction(BinaryFunction<X, Y, Z> function, X value) {
+    public final static <X, Y, Z> Function<Y, Z> toUnaryFunction(BinaryFunction<X, Y, Z> function, X value) {
         return function.toUnaryFunction(value);
     }
 
-    public static BinaryFunction<Object, Object, Boolean> equals = Functions.toBinFunction(new Equals());
+    public final static BinaryFunction<Object, Object, Boolean> equals = Functions.toBinFunction(new Equals());
     private static class Equals implements Function<Object, Function<Object, Boolean>> {
         
         public Function<Object, Boolean> apply(Object value) {
@@ -102,7 +102,7 @@ public class Functions {
         }
     }
 
-    public static BinaryFunction<Integer, Integer, Integer> multi = Functions.toBinFunction(new MultiplyI());
+    public final static BinaryFunction<Integer, Integer, Integer> multi = Functions.toBinFunction(new MultiplyI());
     private static class MultiplyI implements Function<Integer, Function<Integer, Integer>> {
         
         public Function<Integer, Integer> apply(Integer value) {
@@ -120,7 +120,7 @@ public class Functions {
         }
     }
 
-    public static BinaryFunction<Double, Double, Double> multD = Functions.toBinFunction(new MultiplyD());
+    public final static BinaryFunction<Double, Double, Double> multD = Functions.toBinFunction(new MultiplyD());
     private static class MultiplyD implements Function<Double, Function<Double, Double>> {
         
         public Function<Double, Double> apply(Double value) {
@@ -138,7 +138,7 @@ public class Functions {
         }
     }
 
-    public static BinaryFunction<Number, Number, Number> mult = Functions.toBinFunction(new MultiplyN());
+    public final static BinaryFunction<Number, Number, Number> mult = Functions.toBinFunction(new MultiplyN());
     private static class MultiplyN implements Function<Number, Function<Number, Number>> {
         
         public Function<Number, Number> apply(Number value) {
@@ -156,7 +156,7 @@ public class Functions {
         }
     }
 
-    public static BinaryFunction<Integer, Integer, Integer> addi = Functions.toBinFunction(new AddI());
+    public final static BinaryFunction<Integer, Integer, Integer> addi = Functions.toBinFunction(new AddI());
     private static class AddI implements Function<Integer, Function<Integer, Integer>> {
         
         public Function<Integer, Integer> apply(Integer value) {
@@ -174,7 +174,7 @@ public class Functions {
         }
     }
 
-    public static BinaryFunction<Number, Number, Number> add = Functions.toBinFunction(new AddN());
+    public final static BinaryFunction<Number, Number, Number> add = Functions.toBinFunction(new AddN());
     private static class AddN implements Function<Number, Function<Number, Number>> {
         
         public Function<Number, Number> apply(Number value) {
@@ -192,7 +192,7 @@ public class Functions {
         }
     }
 
-    public static <X> Predicate<X> toPredicate(Function<X, Boolean> f) {
+    public final static <X> Predicate<X> toPredicate(Function<X, Boolean> f) {
         return new ToPredicate<X>(f);
     }
     private static class ToPredicate<X> implements Predicate<X> {
@@ -205,5 +205,8 @@ public class Functions {
         }
     }
 
+    public static abstract class AFunction<X, Y> implements Function<X, Y> {
+        public abstract Y apply(X x);
+    }
 }
 

@@ -17,7 +17,7 @@ public class StringUtils {
      * @param length length of shortened {@code String}
      * @return a unique shortened {@code String} hash
      */
-    public static String shortenString(String s, int length) {
+    public final static String shortenString(String s, int length) {
         return shortenString(s, length, Digest.HEX);
     }
 
@@ -28,7 +28,7 @@ public class StringUtils {
      * @param  digest type of {@code String} output
      * @return a unique shortened {@code String} hash
      */
-    public static String shortenString(String s, int length, Digest digest) {
+    public final static String shortenString(String s, int length, Digest digest) {
         if (s.length() <= length) return s;
         try {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
@@ -44,7 +44,7 @@ public class StringUtils {
         }
     }
 
-    public static String toHex(byte[] bytes) {
+    public final static String toHex(byte[] bytes) {
         BigInteger bi = new BigInteger(1, bytes);
         return String.format("%0" + (bytes.length << 1) + "X", bi);
     }

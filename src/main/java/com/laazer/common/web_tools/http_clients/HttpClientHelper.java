@@ -53,11 +53,11 @@ public class HttpClientHelper {
         }
     }
 
-    public static void sendGet(String url, String authToken) throws Exception{
+    public final static void sendGet(String url, String authToken) throws Exception{
         sendGet(url, Box.fill(authToken));
     }
 
-    public static void sendGet(String url) throws Exception{
+    public final static void sendGet(String url) throws Exception{
         sendGet(url, Box.EMPTY);
     }
 
@@ -104,31 +104,31 @@ public class HttpClientHelper {
         }
     }
 
-    public static Box<HttpResponse> executePostJson(String url, String json, String authToken, NameValuePair... pairs) {
+    public final static Box<HttpResponse> executePostJson(String url, String json, String authToken, NameValuePair... pairs) {
         return executeRequest(url, HttpVal.POST, Box.fill(json), Box.fill(authToken), pairs);
     }
 
-    public static Box<HttpResponse> executePostJson(String url, String json, NameValuePair... pairs) {
+    public final static Box<HttpResponse> executePostJson(String url, String json, NameValuePair... pairs) {
         return executeRequest(url, HttpVal.POST, Box.fill(json), Box.EMPTY, pairs);
     }
 
-    public static Box<HttpResponse> executePost(String url, String authToken, NameValuePair... pairs) {
+    public final static Box<HttpResponse> executePost(String url, String authToken, NameValuePair... pairs) {
         return executeRequest(url, HttpVal.POST, Box.EMPTY, Box.fill(authToken), pairs);
     }
 
-    public static Box<HttpResponse> executePost(String url, NameValuePair... pairs) {
+    public final static Box<HttpResponse> executePost(String url, NameValuePair... pairs) {
         return executeRequest(url, HttpVal.POST, Box.EMPTY, Box.EMPTY, pairs);
     }
 
-    public static Box<HttpResponse> executeGet(String url, String authToken, NameValuePair... pairs) {
+    public final static Box<HttpResponse> executeGet(String url, String authToken, NameValuePair... pairs) {
         return executeRequest(url, HttpVal.GET, Box.EMPTY, Box.fill(authToken), pairs);
     }
 
-    public static Box<HttpResponse> executeGet(String url, NameValuePair... pairs) {
+    public final static Box<HttpResponse> executeGet(String url, NameValuePair... pairs) {
         return executeRequest(url, HttpVal.GET, Box.EMPTY, Box.EMPTY, pairs);
     }
 
-    public static Box<HttpResponse> executeGet(String url) {
+    public final static Box<HttpResponse> executeGet(String url) {
         return executeRequest(url, HttpVal.GET, Box.EMPTY, Box.EMPTY);
     }
 
@@ -138,7 +138,7 @@ public class HttpClientHelper {
      * @return the {@code String} content from a given {@code HttpResponse}, if an Exception is thrown
      * an empty {@code String} will be returned
      */
-    public static String responseToString(HttpResponse response) {
+    public final static String responseToString(HttpResponse response) {
         try {
             BufferedReader rd = new BufferedReader(
                     new InputStreamReader(response.getEntity().getContent()));
@@ -159,7 +159,7 @@ public class HttpClientHelper {
      * @param response a given {@code HttpResponse}
      * @return the status code from a given {@code HttpResponse}, if an error is thrown -1 is returned
      */
-    public static int getStatusCode(HttpResponse response) {
+    public final static int getStatusCode(HttpResponse response) {
         try {
             return response.getStatusLine().getStatusCode();
         }catch (Exception e) {
@@ -172,13 +172,13 @@ public class HttpClientHelper {
      * @param url a given {@code String} url
      * @return true if the given {@code String} url is of valid format
      */
-    public static boolean isValidUrl(String url) {
+    public final static boolean isValidUrl(String url) {
         String[] schemes = {"http","https", "ftp", "sftp"};
         UrlValidator urlValidator = new UrlValidator(schemes);
         return urlValidator.isValid(url);
     }
 
-    public static boolean exists(String URLName){
+    public final static boolean exists(String URLName){
         try {
             HttpURLConnection.setFollowRedirects(false);
             // note : you may also need
