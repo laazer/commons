@@ -7,31 +7,48 @@ package com.laazer.common.functions;
  */
 public class Functions {
 
-    public final static Function<Object, Object> identity = new Identity();
+    @Deprecated
+    public final static Function<Object, Object> identity = identity();
+    public final static <T> Function<T, T> identity() {
+        return new Identity<T>();
+    }
     private static class Identity<X> implements Function<X, X> {
         public X apply(X value) {
             return value;
         }
     }
 
-    public final static Function<Object, String> toString = new ToString();
-    private static class ToString implements Function<Object, String> {
-        public String apply(Object value) {
+    @Deprecated
+    public final static Function<Object, String> toString = toStringObject();
+    public final static <T> Function<T, String> toStringObject() {
+        return new ToString<T>();
+    }
+
+    private static class ToString<T> implements Function<T, String> {
+        public String apply(T value) {
             return value.toString();
         }
     }
 
-    public final static Function<Object, Integer> getHashCode = new GetHashCode();
-    private static class GetHashCode implements Function<Object, Integer> {
-        public Integer apply(Object value) {
+    @Deprecated
+    public final static Function<Object, Integer> getHashCode = getHashCode();
+    public final static <T> Function<T, Integer> getHashCode() {
+        return new GetHashCode<T>();
+    }
+    private static class GetHashCode<T> implements Function<T, Integer> {
+        public Integer apply(T value) {
             return toInt.apply(value.hashCode());
         }
     }
-    
-    public final static Function<Object, Double> toDouble = new ToDouble();
-    private static class ToDouble implements Function<Object, Double> {
+
+    @Deprecated
+    public final static Function<Object, Double> toDouble = toDouble();
+    public final static <T> Function<T, Double> toDouble() {
+        return new ToDouble<T>();
+    }
+    private static class ToDouble<T> implements Function<T, Double> {
         
-        public Double apply(Object value) {
+        public Double apply(T value) {
             if (value instanceof String) {
                 return Double.parseDouble(value.toString());
             }
@@ -43,11 +60,15 @@ public class Functions {
             }
         }
     }
-    
-    public final static Function<Object, Integer> toInt = new ToInt();
-    private static class ToInt implements Function<Object, Integer> {
+
+    @Deprecated
+    public final static Function<Object, Integer> toInt = toInt();
+    public final static <T> Function<T, Integer> toInt() {
+        return new ToInt<T>();
+    }
+    private static class ToInt<T> implements Function<T, Integer> {
         
-        public Integer apply(Object value) {
+        public Integer apply(T value) {
             if (value instanceof String) {
                 return Integer.parseInt(value.toString());
             }
@@ -59,11 +80,14 @@ public class Functions {
             }
         }
     }
-    
-    public final static Function<Object, Boolean> toBoolean = new ToBoolean();
-    private static class ToBoolean implements Function<Object, Boolean> {
-        
-        public Boolean apply(Object value) {
+
+    @Deprecated
+    public final static Function<Object, Boolean> toBoolean = toBoolean();
+    public final static <T> Function<T, Boolean> toBoolean() {
+        return new ToBoolean<T>();
+    }
+    private static class ToBoolean<T> implements Function<T, Boolean> {
+        public Boolean apply(T value) {
             return Boolean.parseBoolean(value.toString());
         }
     }
@@ -77,7 +101,7 @@ public class Functions {
      * @return a {@code BinaryFunction} representation of the given {@code Function}
      */
     public final static <X, Y, Z> BinaryFunction<X, Y, Z> toBinFunction(Function<X, Function<Y, Z>> function) {
-        return new CompoundFunction(function);
+        return new CompoundFunction<X, Y, Z>(function);
     }
 
     public final static <X, Y, Z> Function<Y, Z> toUnaryFunction(BinaryFunction<X, Y, Z> function, X value) {

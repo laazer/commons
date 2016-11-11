@@ -23,7 +23,12 @@ public class ListUtils {
         }
     }
 
+    @Deprecated
     public final static BinaryFunction<List, List, List> append = Functions.toBinFunction(new Append());
+    public final static <T> BinaryFunction<List<T>, List<T>, List<T>> append() {
+        return Functions.toBinFunction(new Append<T>());
+    }
+
     private static class Append<T> implements Function<List<T>, Function<List<T>, List<T>>> {
         
         public Function<List<T>, List<T>> apply(List<T> value) {
@@ -45,7 +50,6 @@ public class ListUtils {
 
     public final static Function<Object, List<Object>> toList = new ToList();
     private static class ToList implements Function<Object, List<Object>> {
-        
         public List<Object> apply(Object value) {
             return (List<Object>) value;
         }
