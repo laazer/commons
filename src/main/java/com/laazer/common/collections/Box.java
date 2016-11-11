@@ -178,7 +178,7 @@ class Full<T> extends Box<T> {
 final class Empty extends Box {
     private static Empty _instance = null;
 
-    protected static Empty getInstance() {
+    protected final static Empty getInstance() {
         if (_instance == null) {
             _instance = new Empty();
         }

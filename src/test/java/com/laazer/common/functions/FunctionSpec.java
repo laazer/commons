@@ -49,4 +49,17 @@ public class FunctionSpec {
         assertEquals("test Number mult on double", Functions.mult.apply(1.1, 1.1).doubleValue(), 1.21, 0.001);
     }
 
+    @Test
+    public void testCompoundSimple() {
+        Function<Integer, Integer> add10Mult10 = Functions.compound(Functions.addi.toUnaryFunction(10), Functions.multi.toUnaryFunction(10));
+        assertTrue("Test compound simple function 1", add10Mult10.apply(5) == (5 + 10) * 10);
+    }
+
+    @Test
+    public void testCompoundComplex() {
+        BinaryFunction<Object, Integer, Integer> objectAdd =
+                Functions.toBinFunction(Functions.compound(Functions.toInt, Functions.addi));
+        assertTrue("Test compounding functions 1", objectAdd.apply("1", 10) == Integer.parseInt("1") + 10);
+        assertTrue("Test compounding functions 2", objectAdd.apply("157", 13) == Integer.parseInt("157") + 13);
+    }
 }

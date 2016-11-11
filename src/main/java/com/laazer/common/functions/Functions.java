@@ -90,7 +90,7 @@ public class Functions {
         public Function<Object, Boolean> apply(Object value) {
             return new Equals1(value);
         }
-        private class Equals1 implements Function<Object, Boolean> {
+        private final class Equals1 implements Function<Object, Boolean> {
             Object x;
             Equals1(Object x) {
                 this.x = x;
@@ -108,7 +108,7 @@ public class Functions {
         public Function<Integer, Integer> apply(Integer value) {
             return new MultiplyI1(value);
         }
-        private class MultiplyI1 implements Function<Integer, Integer> {
+        private final class MultiplyI1 implements Function<Integer, Integer> {
             Integer x;
             MultiplyI1(Integer x) {
                 this.x = x;
@@ -126,7 +126,7 @@ public class Functions {
         public Function<Double, Double> apply(Double value) {
             return new MultiplyD1(value);
         }
-        private class MultiplyD1 implements Function<Double, Double> {
+        private final class MultiplyD1 implements Function<Double, Double> {
             Double x;
             MultiplyD1(Double x) {
                 this.x = x;
@@ -144,7 +144,7 @@ public class Functions {
         public Function<Number, Number> apply(Number value) {
             return new MultiplyN1(value);
         }
-        private class MultiplyN1 implements Function<Number, Number> {
+        private final class MultiplyN1 implements Function<Number, Number> {
             Number x;
             MultiplyN1(Number x) {
                 this.x = x;
@@ -162,7 +162,7 @@ public class Functions {
         public Function<Integer, Integer> apply(Integer value) {
             return new AddI1(value);
         }
-        private class AddI1 implements Function<Integer, Integer> {
+        private final class AddI1 implements Function<Integer, Integer> {
             Integer x;
             AddI1(Integer x) {
                 this.x = x;
@@ -180,7 +180,7 @@ public class Functions {
         public Function<Number, Number> apply(Number value) {
             return new Add1(value);
         }
-        private class Add1 implements Function<Number, Number> {
+        private final class Add1 implements Function<Number, Number> {
             Number x;
             Add1(Number x) {
                 this.x = x;
@@ -207,6 +207,46 @@ public class Functions {
 
     public static abstract class AFunction<X, Y> implements Function<X, Y> {
         public abstract Y apply(X x);
+    }
+
+    public final static <X, Y, Z> Function<X, Z> compound(final Function<X, ? extends Y> f1,
+                                                          final Function<Y, Z> f2) {
+        return new AFunction<X, Z>() {
+            @Override
+            public Z apply(X x) {
+                return f2.apply(f1.apply(x));
+            }
+        };
+    }
+
+    public final static <W, X, Y, Z> Function<W, Function<X, Z>> compound(final BinaryFunction<W, X, ? extends Y> f1,
+                                                          final Function<Y, Z> f2) {
+        return new AFunction<W, Function<X, Z>>() {
+            @Override
+            public Function<X, Z> apply(final W w) {
+                return new AFunction<X, Z>() {
+                    @Override
+                    public Z apply(X x) {
+                        return f2.apply(f1.apply(w, x));
+                    }
+                };
+            }
+        };
+    }
+
+    public final static <W, X, Y, Z> Function<W, Function<Y, Z>> compound(final Function<W, ? extends X> f1,
+                                                                          final BinaryFunction<X, Y, Z> f2) {
+        return new AFunction<W, Function<Y, Z>>() {
+            @Override
+            public Function<Y, Z> apply(final W w) {
+                return new AFunction<Y, Z>() {
+                    @Override
+                    public Z apply(Y y) {
+                        return f2.apply(f1.apply(w), y);
+                    }
+                };
+            }
+        };
     }
 }
 
