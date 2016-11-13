@@ -24,7 +24,7 @@ public class ListUtils {
     }
 
     @Deprecated
-    public final static BinaryFunction<List, List, List> append = Functions.toBinFunction(new Append());
+    public final static BinaryFunction<List<Object>, List<Object>, List<Object>> append = append();
     public final static <T> BinaryFunction<List<T>, List<T>, List<T>> append() {
         return Functions.toBinFunction(new Append<T>());
     }

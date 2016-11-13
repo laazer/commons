@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Functions.java" line="85" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Functions.java" line="56" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a21a380-9cc5-4399-acea-a7ff610f10c2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/DoubleUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/laazer/common/primitives/IntUtilsSpec.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/laazer/common/collections/ListUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/laazer/common/collections/ListUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Functions.java" afterPath="$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Functions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Predicate.java" afterPath="$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Predicate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/IntUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/IntUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/StringUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/StringUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/laazer/common/collections/ListUtilsSpec.java" afterPath="$PROJECT_DIR$/src/test/java/com/laazer/common/collections/ListUtilsSpec.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/laazer/common/functions/FunctionSpec.java" afterPath="$PROJECT_DIR$/src/test/java/com/laazer/common/functions/FunctionSpec.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/laazer/common/primitives/ArrayUtilsSpec.java" afterPath="$PROJECT_DIR$/src/test/java/com/laazer/common/primitives/ArrayUtilsSpec.java" />
     </list>
     <ignored path="commons.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,78 +41,68 @@
       <file leaf-file-name="Functions.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Functions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="84" column="73" selection-start-line="84" selection-start-column="73" selection-end-line="84" selection-end-column="73" />
+            <state relative-caret-position="238">
+              <caret line="125" column="5" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
               <folding>
-                <element signature="e#271#272#0" expanded="true" />
-                <element signature="e#311#312#0" expanded="true" />
-                <element signature="e#614#615#0" expanded="true" />
-                <element signature="e#654#655#0" expanded="true" />
-                <element signature="e#978#979#0" expanded="true" />
-                <element signature="e#1021#1022#0" expanded="true" />
-                <element signature="e#1351#1352#0" expanded="true" />
-                <element signature="e#1391#1392#0" expanded="true" />
-                <element signature="e#1972#1973#0" expanded="true" />
-                <element signature="e#2009#2010#0" expanded="true" />
-                <element signature="e#2597#2598#0" expanded="true" />
-                <element signature="e#2638#2639#0" expanded="true" />
-                <element signature="e#8029#8178#0" expanded="true" />
-                <element signature="e#8177#8178#0" expanded="true" />
-                <element signature="e#8405#8757#0" expanded="true" />
-                <element signature="e#8540#8732#0" expanded="true" />
-                <element signature="e#8731#8732#0" expanded="true" />
-                <element signature="e#8756#8757#0" expanded="true" />
-                <element signature="e#9000#9352#0" expanded="true" />
-                <element signature="e#9135#9327#0" expanded="true" />
-                <element signature="e#9326#9327#0" expanded="true" />
-                <element signature="e#9351#9352#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1648#1649#0" expanded="true" />
+                <element signature="e#1689#1690#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FunctionSpec.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/laazer/common/functions/FunctionSpec.java">
+      <file leaf-file-name="Predicate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Predicate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="54" column="93" selection-start-line="54" selection-start-column="93" selection-end-line="54" selection-end-column="93" />
+            <state relative-caret-position="51">
+              <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CollectionUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/collections/CollectionUtils.java">
+      <file leaf-file-name="Function.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Function.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+            <state relative-caret-position="136">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/collections/MapUtils.java">
+      <file leaf-file-name="IntUtilsSpec.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/laazer/common/primitives/IntUtilsSpec.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+            <state relative-caret-position="493">
+              <caret line="35" column="76" selection-start-line="35" selection-start-column="76" selection-end-line="35" selection-end-column="76" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1527#1540#0" expanded="false" />
-                <element signature="e#2338#2344#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListUtils.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/collections/ListUtils.java">
+      <file leaf-file-name="IntUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/IntUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+            <state relative-caret-position="337">
+              <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
               <folding>
-                <element signature="e#1208#1209#0" expanded="true" />
-                <element signature="e#1257#1258#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArrayUtilsSpec.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/laazer/common/primitives/ArrayUtilsSpec.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,9 +111,11 @@
       <file leaf-file-name="ListUtilsSpec.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/laazer/common/collections/ListUtilsSpec.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
-              <folding />
+            <state relative-caret-position="418">
+              <caret line="61" column="44" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
+              <folding>
+                <element signature="e#1676#1685#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,76 +126,10 @@
             <state relative-caret-position="85">
               <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
               <folding>
-                <element signature="e#573#574#0" expanded="true" />
-                <element signature="e#610#611#0" expanded="true" />
-                <element signature="e#665#666#0" expanded="true" />
-                <element signature="e#694#695#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MagicList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/collections/MagicList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#418#419#0" expanded="false" />
-                <element signature="e#452#453#0" expanded="false" />
-                <element signature="e#488#489#0" expanded="false" />
-                <element signature="e#538#539#0" expanded="false" />
-                <element signature="e#966#967#0" expanded="false" />
-                <element signature="e#1012#1013#0" expanded="false" />
-                <element signature="e#1041#1042#0" expanded="false" />
-                <element signature="e#1084#1085#0" expanded="false" />
-                <element signature="e#1246#1247#0" expanded="false" />
-                <element signature="e#1282#1283#0" expanded="false" />
-                <element signature="e#1319#1320#0" expanded="false" />
-                <element signature="e#1358#1359#0" expanded="false" />
-                <element signature="e#1404#1405#0" expanded="false" />
-                <element signature="e#1445#1446#0" expanded="false" />
-                <element signature="e#1487#1488#0" expanded="false" />
-                <element signature="e#1527#1528#0" expanded="false" />
-                <element signature="e#1565#1566#0" expanded="false" />
-                <element signature="e#1604#1605#0" expanded="false" />
-                <element signature="e#1646#1647#0" expanded="false" />
-                <element signature="e#1686#1687#0" expanded="false" />
-                <element signature="e#1722#1723#0" expanded="false" />
-                <element signature="e#1758#1759#0" expanded="false" />
-                <element signature="e#1802#1803#0" expanded="false" />
-                <element signature="e#1841#1842#0" expanded="false" />
-                <element signature="e#1897#1898#0" expanded="false" />
-                <element signature="e#1941#1942#0" expanded="false" />
-                <element signature="e#2002#2003#0" expanded="false" />
-                <element signature="e#2041#2042#0" expanded="false" />
-                <element signature="e#2113#2114#0" expanded="false" />
-                <element signature="e#2152#2153#0" expanded="false" />
-                <element signature="e#2206#2207#0" expanded="false" />
-                <element signature="e#2248#2249#0" expanded="false" />
-                <element signature="e#2302#2303#0" expanded="false" />
-                <element signature="e#2344#2345#0" expanded="false" />
-                <element signature="e#2376#2377#0" expanded="false" />
-                <element signature="e#2406#2407#0" expanded="false" />
-                <element signature="e#2442#2443#0" expanded="false" />
-                <element signature="e#2482#2483#0" expanded="false" />
-                <element signature="e#2529#2530#0" expanded="false" />
-                <element signature="e#2578#2579#0" expanded="false" />
-                <element signature="e#2628#2629#0" expanded="false" />
-                <element signature="e#2675#2676#0" expanded="false" />
-                <element signature="e#2714#2715#0" expanded="false" />
-                <element signature="e#2757#2758#0" expanded="false" />
-                <element signature="e#2798#2799#0" expanded="false" />
-                <element signature="e#2838#2839#0" expanded="false" />
-                <element signature="e#2883#2884#0" expanded="false" />
-                <element signature="e#2927#2928#0" expanded="false" />
-                <element signature="e#2977#2978#0" expanded="false" />
-                <element signature="e#3021#3022#0" expanded="false" />
-                <element signature="e#3080#3081#0" expanded="false" />
-                <element signature="e#3129#3130#0" expanded="false" />
-                <element signature="e#3522#3523#0" expanded="false" />
-                <element signature="e#3567#3568#0" expanded="false" />
+                <element signature="e#400#401#0" expanded="false" />
+                <element signature="e#426#427#0" expanded="false" />
+                <element signature="e#467#468#0" expanded="false" />
+                <element signature="e#519#520#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -232,22 +166,25 @@
         <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/primatives/ArrayUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/util/FileUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/util/TimeTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Predicate.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/laazer/common/primitives/ArrayUtilsSpec.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/functions/BinFunction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/collections/KVPair.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/laazer/common/primitives/StringUtilsSpec.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/StringUtils.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/ArrayUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/IntUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/collections/CollectionUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/collections/Box.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/functions/BinaryFunction.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/laazer/common/functions/FunctionSpec.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Function.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/collections/ListUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/laazer/common/functions/FunctionSpec.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/DoubleUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Functions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Predicate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/StringUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/laazer/common/primitives/ArrayUtilsSpec.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/laazer/common/collections/ListUtilsSpec.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/IntUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/laazer/common/primitives/IntUtilsSpec.java" />
       </list>
     </option>
   </component>
@@ -259,10 +196,26 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-17" />
-    <option name="y" value="48" />
-    <option name="width" value="1934" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Android</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -289,6 +242,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -348,6 +302,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="primitives" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -452,6 +410,96 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web_tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="primitives" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -585,9 +633,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -595,7 +642,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../trappy" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
@@ -1128,34 +1175,60 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-17" y="48" width="1934" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33150986" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17289221" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17963752" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17963752" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1186,23 +1259,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/laazer/common/primitives/StringUtilsSpec.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/StringUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1224,28 +1280,9 @@
         <state relative-caret-position="1734">
           <caret line="122" column="19" selection-start-line="122" selection-start-column="19" selection-end-line="122" selection-end-column="19" />
           <folding>
-            <element signature="e#271#272#0" expanded="true" />
-            <element signature="e#311#312#0" expanded="true" />
-            <element signature="e#614#615#0" expanded="true" />
-            <element signature="e#654#655#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
-            <element signature="e#1021#1022#0" expanded="true" />
-            <element signature="e#1351#1352#0" expanded="true" />
-            <element signature="e#1391#1392#0" expanded="true" />
-            <element signature="e#1972#1973#0" expanded="true" />
-            <element signature="e#2009#2010#0" expanded="true" />
-            <element signature="e#2597#2598#0" expanded="true" />
-            <element signature="e#2638#2639#0" expanded="true" />
-            <element signature="e#8029#8178#0" expanded="true" />
-            <element signature="e#8177#8178#0" expanded="true" />
-            <element signature="e#8405#8757#0" expanded="true" />
-            <element signature="e#8540#8732#0" expanded="true" />
-            <element signature="e#8731#8732#0" expanded="true" />
-            <element signature="e#8756#8757#0" expanded="true" />
-            <element signature="e#9000#9352#0" expanded="true" />
-            <element signature="e#9135#9327#0" expanded="true" />
-            <element signature="e#9326#9327#0" expanded="true" />
-            <element signature="e#9351#9352#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1648#1649#0" expanded="true" />
+            <element signature="e#1689#1690#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1256,8 +1293,6 @@
           <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#1527#1540#0" expanded="false" />
-            <element signature="e#2338#2344#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1300,28 +1335,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#271#272#0" expanded="true" />
-            <element signature="e#311#312#0" expanded="true" />
-            <element signature="e#614#615#0" expanded="true" />
-            <element signature="e#654#655#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
-            <element signature="e#1021#1022#0" expanded="true" />
-            <element signature="e#1351#1352#0" expanded="true" />
-            <element signature="e#1391#1392#0" expanded="true" />
-            <element signature="e#1972#1973#0" expanded="true" />
-            <element signature="e#2009#2010#0" expanded="true" />
-            <element signature="e#2597#2598#0" expanded="true" />
-            <element signature="e#2638#2639#0" expanded="true" />
-            <element signature="e#8029#8178#0" expanded="true" />
-            <element signature="e#8177#8178#0" expanded="true" />
-            <element signature="e#8405#8757#0" expanded="true" />
-            <element signature="e#8540#8732#0" expanded="true" />
-            <element signature="e#8731#8732#0" expanded="true" />
-            <element signature="e#8756#8757#0" expanded="true" />
-            <element signature="e#9000#9352#0" expanded="true" />
-            <element signature="e#9135#9327#0" expanded="true" />
-            <element signature="e#9326#9327#0" expanded="true" />
-            <element signature="e#9351#9352#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1648#1649#0" expanded="true" />
+            <element signature="e#1689#1690#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1332,8 +1348,6 @@
           <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#1527#1540#0" expanded="false" />
-            <element signature="e#2338#2344#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1396,13 +1410,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/web_tools/UrlManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/sync/GenMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1496">
@@ -1421,13 +1428,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/util/FileUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1452,38 +1452,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/util/TimeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="92" column="9" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/util/TestUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/web_tools/http_clients/HttpClientHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/18.0-rc2/guava-18.0-rc2-sources.jar!/com/google/common/base/Predicate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
           <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/laazer/common/primitives/ArrayUtilsSpec.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="59" column="83" selection-start-line="59" selection-start-column="83" selection-end-line="59" selection-end-column="83" />
         </state>
       </provider>
     </entry>
@@ -1516,16 +1488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/StringUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/ArrayUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
@@ -1543,8 +1505,6 @@
           <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#1527#1540#0" expanded="false" />
-            <element signature="e#2338#2344#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1620,55 +1580,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Predicate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/functions/BinaryFunction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
           <folding>
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#610#611#0" expanded="true" />
-            <element signature="e#665#666#0" expanded="true" />
-            <element signature="e#694#695#0" expanded="true" />
+            <element signature="e#400#401#0" expanded="false" />
+            <element signature="e#426#427#0" expanded="false" />
+            <element signature="e#467#468#0" expanded="false" />
+            <element signature="e#519#520#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Function.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/IntUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/laazer/common/functions/FunctionSpec.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="54" column="93" selection-start-line="54" selection-start-column="93" selection-end-line="54" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/laazer/common/collections/ListUtilsSpec.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1680,44 +1601,157 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Functions.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/collections/ListUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="84" column="73" selection-start-line="84" selection-start-column="73" selection-end-line="84" selection-end-column="73" />
+        <state relative-caret-position="189">
+          <caret line="66" column="53" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/web_tools/http_clients/HttpClientHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
-            <element signature="e#271#272#0" expanded="true" />
-            <element signature="e#311#312#0" expanded="true" />
-            <element signature="e#614#615#0" expanded="true" />
-            <element signature="e#654#655#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
-            <element signature="e#1021#1022#0" expanded="true" />
-            <element signature="e#1351#1352#0" expanded="true" />
-            <element signature="e#1391#1392#0" expanded="true" />
-            <element signature="e#1972#1973#0" expanded="true" />
-            <element signature="e#2009#2010#0" expanded="true" />
-            <element signature="e#2597#2598#0" expanded="true" />
-            <element signature="e#2638#2639#0" expanded="true" />
-            <element signature="e#8029#8178#0" expanded="true" />
-            <element signature="e#8177#8178#0" expanded="true" />
-            <element signature="e#8405#8757#0" expanded="true" />
-            <element signature="e#8540#8732#0" expanded="true" />
-            <element signature="e#8731#8732#0" expanded="true" />
-            <element signature="e#8756#8757#0" expanded="true" />
-            <element signature="e#9000#9352#0" expanded="true" />
-            <element signature="e#9135#9327#0" expanded="true" />
-            <element signature="e#9326#9327#0" expanded="true" />
-            <element signature="e#9351#9352#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/collections/ListUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/web_tools/UrlManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+        <state relative-caret-position="-68">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
-            <element signature="e#1208#1209#0" expanded="true" />
-            <element signature="e#1257#1258#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/util/FileUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/util/TimeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="92" column="9" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/util/TestUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/DoubleUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
+            <element signature="e#1084#1085#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/StringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+          <folding>
+            <element signature="e#2237#2238#0" expanded="true" />
+            <element signature="e#2270#2271#0" expanded="true" />
+            <element signature="e#2420#2421#0" expanded="true" />
+            <element signature="e#2470#2471#0" expanded="true" />
+            <element signature="e#2879#2880#0" expanded="true" />
+            <element signature="e#2938#2939#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/laazer/common/primitives/ArrayUtilsSpec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/laazer/common/collections/ListUtilsSpec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="61" column="44" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
+          <folding>
+            <element signature="e#1676#1685#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Functions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="125" column="5" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1648#1649#0" expanded="true" />
+            <element signature="e#1689#1690#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/laazer/common/functions/FunctionSpec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="48" column="62" selection-start-line="48" selection-start-column="62" selection-end-line="48" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/functions/Predicate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/laazer/common/primitives/IntUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/laazer/common/primitives/IntUtilsSpec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="35" column="76" selection-start-line="35" selection-start-column="76" selection-end-line="35" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

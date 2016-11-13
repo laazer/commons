@@ -1,5 +1,8 @@
 package com.laazer.common.functions;
 
+import com.laazer.common.primitives.DoubleUtils;
+import com.laazer.common.primitives.IntUtils;
+
 /**
  * Class containing common functions
  * @author Jacob
@@ -42,44 +45,12 @@ public class Functions {
     }
 
     @Deprecated
-    public final static Function<Object, Double> toDouble = toDouble();
-    public final static <T> Function<T, Double> toDouble() {
-        return new ToDouble<T>();
-    }
-    private static class ToDouble<T> implements Function<T, Double> {
-        
-        public Double apply(T value) {
-            if (value instanceof String) {
-                return Double.parseDouble(value.toString());
-            }
-            else if (value instanceof Number){
-                return ((Number)value).doubleValue();
-            }
-            else {
-                return (Double)value;
-            }
-        }
-    }
+    public final static Function<Object, Double> toDouble = DoubleUtils.toDouble();
+
 
     @Deprecated
-    public final static Function<Object, Integer> toInt = toInt();
-    public final static <T> Function<T, Integer> toInt() {
-        return new ToInt<T>();
-    }
-    private static class ToInt<T> implements Function<T, Integer> {
-        
-        public Integer apply(T value) {
-            if (value instanceof String) {
-                return Integer.parseInt(value.toString());
-            }
-            else if (value instanceof Number){
-                return ((Number)value).intValue();
-            }
-            else {
-                return (Integer)value;
-            }
-        }
-    }
+    public final static Function<Object, Integer> toInt = IntUtils.toInt();
+
 
     @Deprecated
     public final static Function<Object, Boolean> toBoolean = toBoolean();
@@ -108,59 +79,33 @@ public class Functions {
         return function.toUnaryFunction(value);
     }
 
-    public final static BinaryFunction<Object, Object, Boolean> equals = Functions.toBinFunction(new Equals());
-    private static class Equals implements Function<Object, Function<Object, Boolean>> {
+    public final static BinaryFunction<Object, Object, Boolean> equals = equals();
+    public final static <X, Y> BinaryFunction<X, Y, Boolean> equals() {
+        return Functions.toBinFunction(new Equals<X, Y>());
+    }
+    private static class Equals<X, Y> implements Function<X, Function<Y, Boolean>> {
         
-        public Function<Object, Boolean> apply(Object value) {
+        public Function<Y, Boolean> apply(X value) {
             return new Equals1(value);
         }
-        private final class Equals1 implements Function<Object, Boolean> {
-            Object x;
-            Equals1(Object x) {
+        private final class Equals1 implements Function<Y, Boolean> {
+            X x;
+            Equals1(X x) {
                 this.x = x;
             }
             
-            public Boolean apply(Object value) {
+            public Boolean apply(Y value) {
                 return x.equals(value);
             }
         }
     }
 
-    public final static BinaryFunction<Integer, Integer, Integer> multi = Functions.toBinFunction(new MultiplyI());
-    private static class MultiplyI implements Function<Integer, Function<Integer, Integer>> {
-        
-        public Function<Integer, Integer> apply(Integer value) {
-            return new MultiplyI1(value);
-        }
-        private final class MultiplyI1 implements Function<Integer, Integer> {
-            Integer x;
-            MultiplyI1(Integer x) {
-                this.x = x;
-            }
-            
-            public Integer apply(Integer value) {
-                return x * value;
-            }
-        }
-    }
-
-    public final static BinaryFunction<Double, Double, Double> multD = Functions.toBinFunction(new MultiplyD());
-    private static class MultiplyD implements Function<Double, Function<Double, Double>> {
-        
-        public Function<Double, Double> apply(Double value) {
-            return new MultiplyD1(value);
-        }
-        private final class MultiplyD1 implements Function<Double, Double> {
-            Double x;
-            MultiplyD1(Double x) {
-                this.x = x;
-            }
-            
-            public Double apply(Double value) {
-                return x * value;
-            }
-        }
-    }
+    @Deprecated
+    public final static BinaryFunction<Integer, Integer, Integer> multi = IntUtils.mult;
+    @Deprecated
+    public final static BinaryFunction<Integer, Integer, Integer> addi = IntUtils.add;
+    @Deprecated
+    public final static BinaryFunction<Double, Double, Double> multD = DoubleUtils.mult;
 
     public final static BinaryFunction<Number, Number, Number> mult = Functions.toBinFunction(new MultiplyN());
     private static class MultiplyN implements Function<Number, Function<Number, Number>> {
@@ -176,24 +121,6 @@ public class Functions {
             
             public Number apply(Number value) {
                 return (Number)(x.doubleValue() * value.doubleValue());
-            }
-        }
-    }
-
-    public final static BinaryFunction<Integer, Integer, Integer> addi = Functions.toBinFunction(new AddI());
-    private static class AddI implements Function<Integer, Function<Integer, Integer>> {
-        
-        public Function<Integer, Integer> apply(Integer value) {
-            return new AddI1(value);
-        }
-        private final class AddI1 implements Function<Integer, Integer> {
-            Integer x;
-            AddI1(Integer x) {
-                this.x = x;
-            }
-            
-            public Integer apply(Integer value) {
-                return x + value;
             }
         }
     }

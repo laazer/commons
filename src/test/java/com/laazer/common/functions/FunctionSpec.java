@@ -10,8 +10,8 @@ public class FunctionSpec {
 
 
     private void init(){
-        eq1 =  Functions.equals.toUnaryFunction("abc");
-        eq2 = Functions.toUnaryFunction(Functions.equals, "abc");
+        eq1 =  Functions.equals().toUnaryFunction("abc");
+        eq2 = Functions.toUnaryFunction(Functions.equals(), "abc");
     }
 
     @Test
@@ -19,6 +19,10 @@ public class FunctionSpec {
         assertTrue("test to boolean, true", Functions.toBoolean.apply("true"));
         assertTrue("test to boolean, false", !Functions.toBoolean.apply("false"));
         assertEquals("test identity", Functions.identity.apply("abc"), "abc");
+
+        assertTrue("test to boolean, true", Functions.toBoolean().apply("true"));
+        assertTrue("test to boolean, false", !Functions.toBoolean().apply("false"));
+        assertEquals("test identity", Functions.identity().apply("abc"), "abc");
     }
 
     @Test
@@ -27,6 +31,9 @@ public class FunctionSpec {
         assertTrue("abc = abc, with Functions equal", Functions.equals.apply("abc", "abc"));
         assertTrue("abc = abc, with toUnaryFunction method", eq1.apply("abc"));
         assertTrue("abc = abc, with toUnaryFunction function", eq2.apply("abc"));
+
+        init();
+        assertTrue("abc = abc, with Functions equal", Functions.equals().apply("abc", "abc"));
     }
 
     @Test

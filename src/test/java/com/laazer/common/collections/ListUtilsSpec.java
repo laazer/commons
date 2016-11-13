@@ -7,6 +7,7 @@ import com.google.common.base.Predicate;
 import org.junit.Test;
 import com.laazer.common.functions.Functions;
 import com.laazer.common.collections.ListUtils;
+import com.laazer.common.primitives.IntUtils;
 
 import java.util.Arrays;
 import java.util.List;
@@ -49,18 +50,18 @@ public class ListUtilsSpec {
     public void testAppend() {
         init();
         assertEquals("test append on list of strings",
-                ListUtils.append.apply(los1, los2), los3);
+                ListUtils.<String>append().apply(los1, los2), los3);
         assertEquals("test append on list of ints",
-                ListUtils.append.apply(loi, loi2), loi3);
+                ListUtils.<Integer>append().apply(loi, loi2), loi3);
     }
 
     @Test
     public void testMap() {
         init();
         assertEquals("test map on list of strings to list of ints",
-                ListUtils.map(losi, Functions.toInt), loi);
+                ListUtils.map(losi, IntUtils.toInt()), loi);
         assertEquals("test map on list of booleans to list of strings",
-                ListUtils.map(lob, Functions.toString), losb);
+                ListUtils.map(lob, Functions.<Boolean>toStringObject()), losb);
     }
 
     @Test

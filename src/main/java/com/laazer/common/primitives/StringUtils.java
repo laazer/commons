@@ -1,5 +1,8 @@
 package com.laazer.common.primitives;
 
+import com.laazer.common.functions.BinaryFunction;
+import com.laazer.common.functions.Function;
+import com.laazer.common.functions.Functions;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -52,5 +55,35 @@ public class StringUtils {
     public enum Digest {
         HEX,
         BYTE_STRING;
+    }
+
+    public static final BinaryFunction<String, String, String> append(String separator) {
+        return Functions.toBinFunction(new Append(separator));
+    }
+
+    public static final BinaryFunction<String, String, String> append() {
+        return append("");
+    }
+
+    private static class Append implements Function<String, Function<String, String>> {
+        String separator;
+        Append(String separator) {
+            this.separator = separator;
+        }
+        public Function<String, String> apply(String input) {
+            return new Append1(input, separator);
+        }
+
+        private final class Append1 implements Function<String, String> {
+            String s;
+            String sep;
+            Append1(String s, String sep) {
+                this.s = s;
+                this.sep = sep;
+            }
+            public String apply(String input) {
+                return this.s + sep + input;
+            }
+        }
     }
 }
