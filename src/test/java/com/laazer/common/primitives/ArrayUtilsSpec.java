@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by Dexter on 7/6/2016.
+ * Created by Laazer
  */
 public class ArrayUtilsSpec {
 

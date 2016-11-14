@@ -100,13 +100,6 @@ public class Functions {
         }
     }
 
-    @Deprecated
-    public final static BinaryFunction<Integer, Integer, Integer> multi = IntUtils.mult;
-    @Deprecated
-    public final static BinaryFunction<Integer, Integer, Integer> addi = IntUtils.add;
-    @Deprecated
-    public final static BinaryFunction<Double, Double, Double> multD = DoubleUtils.mult;
-
     public final static BinaryFunction<Number, Number, Number> mult = Functions.toBinFunction(new MultiplyN());
     private static class MultiplyN implements Function<Number, Function<Number, Number>> {
         
@@ -160,8 +153,8 @@ public class Functions {
         public abstract Y apply(X x);
     }
 
-    public final static <X, Y, Z> Function<X, Z> compound(final Function<X, ? extends Y> f1,
-                                                          final Function<Y, Z> f2) {
+    public final static <X, Y, Z> Function<X, Z> compose(final Function<X, ? extends Y> f1,
+                                                         final Function<Y, Z> f2) {
         return new AFunction<X, Z>() {
             @Override
             public Z apply(X x) {
@@ -170,8 +163,8 @@ public class Functions {
         };
     }
 
-    public final static <W, X, Y, Z> Function<W, Function<X, Z>> compound(final BinaryFunction<W, X, ? extends Y> f1,
-                                                          final Function<Y, Z> f2) {
+    public final static <W, X, Y, Z> Function<W, Function<X, Z>> compose(final BinaryFunction<W, X, ? extends Y> f1,
+                                                                         final Function<Y, Z> f2) {
         return new AFunction<W, Function<X, Z>>() {
             @Override
             public Function<X, Z> apply(final W w) {
@@ -194,6 +187,21 @@ public class Functions {
                     @Override
                     public Z apply(Y y) {
                         return f2.apply(f1.apply(w), y);
+                    }
+                };
+            }
+        };
+    }
+
+    public final static <W, X, Y, Z> Function<X, Function<W, Z>> compound(final BinaryFunction<X, Y, ? extends Z> f1,
+                                                                          final Function<W, Y> f2) {
+        return new AFunction<X, Function<W, Z>>() {
+            @Override
+            public Function<W, Z> apply(final X x) {
+                return new AFunction<W, Z>() {
+                    @Override
+                    public Z apply(W w) {
+                        return f1.apply(x, f2.apply(w));
                     }
                 };
             }

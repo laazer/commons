@@ -3,6 +3,9 @@ package com.laazer.common.collections;
 import com.laazer.common.functions.BinaryFunction;
 import com.laazer.common.functions.Functions;
 import com.laazer.common.functions.Function;
+import com.laazer.common.primitives.DoubleUtils;
+import com.laazer.common.primitives.IntUtils;
+
 import java.util.*;
 
 public class ListUtils {
@@ -60,7 +63,7 @@ public class ListUtils {
     private static class ToStringList implements Function<Object, List<String>> {
         
         public List<String> apply(Object value) {
-            return ListUtils.map(ListUtils.toList.apply(value), Functions.toString);
+            return ListUtils.map(ListUtils.toList.apply(value), Functions.toStringObject());
         }
     }
     
@@ -68,7 +71,7 @@ public class ListUtils {
     private static class ToIntList implements Function<Object, List<Integer>> {
         
         public List<Integer> apply(Object value) {
-            return ListUtils.map(ListUtils.toList.apply(value), Functions.toInt);
+            return ListUtils.map(ListUtils.toList.apply(value), IntUtils.toInt());
         }
     }
 
@@ -76,7 +79,7 @@ public class ListUtils {
     private static class ToDoubleList implements Function<Object, List<Double>> {
         
         public List<Double> apply(Object value) {
-            return ListUtils.map(ListUtils.toList.apply(value), Functions.toDouble);
+            return ListUtils.map(ListUtils.toList.apply(value), DoubleUtils.toDouble());
         }
     }
 }

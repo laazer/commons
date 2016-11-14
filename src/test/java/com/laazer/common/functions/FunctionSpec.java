@@ -1,5 +1,8 @@
 package com.laazer.common.functions;
 
+import com.laazer.common.primitives.IntUtils;
+import com.laazer.common.primitives.StringUtils;
+
 import static org.junit.Assert.*;
 import org.junit.Test;
 
@@ -57,16 +60,33 @@ public class FunctionSpec {
     }
 
     @Test
-    public void testCompoundSimple() {
-        Function<Integer, Integer> add10Mult10 = Functions.compound(Functions.addi.toUnaryFunction(10), Functions.multi.toUnaryFunction(10));
+    public void testComposeSimple() {
+        Function<Integer, Integer> add10Mult10 = Functions.compose(IntUtils.add.toUnaryFunction(10), IntUtils.mult.toUnaryFunction(10));
         assertTrue("Test compound simple function 1", add10Mult10.apply(5) == (5 + 10) * 10);
     }
 
     @Test
-    public void testCompoundComplex() {
+    public void testComposeComplex() {
+        BinaryFunction<Integer, Integer, String> addThenString =
+                Functions.toBinFunction(Functions.compose(IntUtils.add, Functions.<Integer>toStringObject()));
+        assertEquals("Test compose complex", addThenString.apply(12, 27), "39");
+        assertEquals("Test compose complex", addThenString.apply(20, 11), "31");
+    }
+
+    @Test
+    public void testCompoundFirstArg() {
         BinaryFunction<Object, Integer, Integer> objectAdd =
-                Functions.toBinFunction(Functions.compound(Functions.toInt, Functions.addi));
+                Functions.toBinFunction(Functions.compound(IntUtils.toInt(), IntUtils.add));
         assertTrue("Test compounding functions 1", objectAdd.apply("1", 10) == Integer.parseInt("1") + 10);
         assertTrue("Test compounding functions 2", objectAdd.apply("157", 13) == Integer.parseInt("157") + 13);
+
+    }
+
+    @Test
+    public void testCompoundSecondArg() {
+        BinaryFunction<Integer, String, Integer> stringAdd =
+                Functions.toBinFunction(Functions.compound(IntUtils.add, IntUtils.<String>toInt()));
+        assertTrue("Test compounding functions 1", stringAdd.apply(10, "1") == Integer.parseInt("1") + 10);
+        assertTrue("Test compounding functions 2", stringAdd.apply(13, "157") == Integer.parseInt("157") + 13);
     }
 }
