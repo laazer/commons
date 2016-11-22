@@ -1,10 +1,10 @@
 package com.laazer.common.collections;
 
 import java.util.*;
-import com.google.common.base.Predicate;
 import com.laazer.common.functions.BinaryFunction;
 import com.laazer.common.functions.Function;
 import com.laazer.common.functions.Functions;
+import com.laazer.common.functions.Predicate;
 
 /**
  * A class that contains specialty methods for handling Collections.
@@ -97,11 +97,19 @@ public class CollectionUtils {
         return base;
     }
 
+    public final static <T> T find(Predicate<T> pred, Collection<T> collection) {
+        for(T t : collection) {
+            if (pred.apply(t)) return t;
+        }
+        return null;
+    }
+
     public final static Number sum(Collection<? extends Number> collection) {
         return CollectionUtils.fold(0, Functions.add, collection);
     }
 
     public final static Number product(Collection<? extends Number> collection) {
+        if (collection.isEmpty()) return 0;
         return CollectionUtils.fold(1, Functions.mult, collection);
     }
 }

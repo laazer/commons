@@ -2,11 +2,8 @@ package com.laazer.common.collections;
 
 import static org.junit.Assert.*;
 
-import com.google.common.base.Function;
-import com.google.common.base.Predicate;
 import org.junit.Test;
 import com.laazer.common.functions.Functions;
-import com.laazer.common.collections.ListUtils;
 import com.laazer.common.primitives.IntUtils;
 
 import java.util.Arrays;

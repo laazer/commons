@@ -9,7 +9,6 @@ import java.util.List;
  */
 public class ArrayUtils {
 
-
     public final static void insert(int[] arr, int value) {
         int tmp = value;
         for(int i = 0; i < arr.length; i++) {
@@ -30,7 +29,7 @@ public class ArrayUtils {
         }
     }
 
-    public final static List<Integer> toList(int[] arr) {
+    public final static List<Integer> toIntList(int... arr) {
         List<Integer> res = new ArrayList<Integer>(arr.length);
         for(Integer i : iterable(arr)) {
             res.add(i);
@@ -56,7 +55,7 @@ public class ArrayUtils {
 
     /*************************************************************************/
 
-    public final static List<Short> toList(short[] arr) {
+    public final static List<Short> toShortList(short... arr) {
         List<Short> res = new ArrayList<Short>(arr.length);
         for(Short i : iterable(arr)) {
             res.add(i);
@@ -82,7 +81,7 @@ public class ArrayUtils {
 
     /*************************************************************************/
 
-    public final static List<Long> toList(long[] arr) {
+    public final static List<Long> toLongList(long... arr) {
         List<Long> res = new ArrayList<Long>(arr.length);
         for(Long i : iterable(arr)) {
             res.add(i);
@@ -108,7 +107,7 @@ public class ArrayUtils {
 
     /*************************************************************************/
 
-    public final static List<Float> toList(float[] arr) {
+    public final static List<Float> toFloatList(float... arr) {
         List<Float> res = new ArrayList<Float>(arr.length);
         for(Float i : iterable(arr)) {
             res.add(i);
@@ -134,7 +133,7 @@ public class ArrayUtils {
 
     /*************************************************************************/
 
-    public final static List<Double> toList(double[] arr) {
+    public final static List<Double> toDoubleList(double... arr) {
         List<Double> res = new ArrayList<Double>(arr.length);
         for(Double i : iterable(arr)) {
             res.add(i);
@@ -160,7 +159,7 @@ public class ArrayUtils {
 
     /*************************************************************************/
 
-    public final static List<Character> toList(char[] arr) {
+    public final static List<Character> toCharList(char... arr) {
         List<Character> res = new ArrayList<Character>(arr.length);
         for(Character i : iterable(arr)) {
             res.add(i);
@@ -186,7 +185,7 @@ public class ArrayUtils {
 
     /*************************************************************************/
 
-    public final static List<Byte> toList(byte[] arr) {
+    public final static List<Byte> toByteList(byte... arr) {
         List<Byte> res = new ArrayList<Byte>(arr.length);
         for(Byte i : iterable(arr)) {
             res.add(i);
@@ -212,7 +211,7 @@ public class ArrayUtils {
 
     /*************************************************************************/
 
-    public final static List<Boolean> toList(boolean[] arr) {
+    public final static List<Boolean> toBoolList(boolean... arr) {
         List<Boolean> res = new ArrayList<Boolean>(arr.length);
         for(Boolean i : iterable(arr)) {
             res.add(i);
@@ -238,7 +237,7 @@ public class ArrayUtils {
 
     /*************************************************************************/
 
-    public final static <T> List<T> toList(T[] arr) {
+    public final static <T> List<T> toList(T... arr) {
         List<T> res = new ArrayList<T>(arr.length);
         for(T i : iterable(arr)) {
             res.add(i);

@@ -1,7 +1,7 @@
 package com.laazer.common.collections;
 
-import com.google.common.base.Function;
-import com.google.common.base.Predicate;
+import com.laazer.common.functions.Function;
+import com.laazer.common.functions.Predicate;
 import java.util.*;
 import java.util.Map.Entry;
 

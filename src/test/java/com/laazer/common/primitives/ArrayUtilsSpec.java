@@ -63,14 +63,14 @@ public class ArrayUtilsSpec {
     @Test
     public void testToListEmpties() {
         initEmpty();
-        assertEquals(toList(ia), EMPTY_LIST);
-        assertEquals(toList(sa), EMPTY_LIST);
-        assertEquals(toList(la), EMPTY_LIST);
-        assertEquals(toList(fa), EMPTY_LIST);
-        assertEquals(toList(da), EMPTY_LIST);
-        assertEquals(toList(ca), EMPTY_LIST);
-        assertEquals(toList(ba), EMPTY_LIST);
-        assertEquals(toList(bla), EMPTY_LIST);
+        assertEquals(toIntList(ia), EMPTY_LIST);
+        assertEquals(toShortList(sa), EMPTY_LIST);
+        assertEquals(toLongList(la), EMPTY_LIST);
+        assertEquals(toFloatList(fa), EMPTY_LIST);
+        assertEquals(toDoubleList(da), EMPTY_LIST);
+        assertEquals(toCharList(ca), EMPTY_LIST);
+        assertEquals(toByteList(ba), EMPTY_LIST);
+        assertEquals(toBoolList(bla), EMPTY_LIST);
     }
 
     @Test
