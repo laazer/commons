@@ -97,7 +97,7 @@ public class CollectionUtils {
         return base;
     }
 
-    public final static <T> T find(Predicate<T> pred, Collection<T> collection) {
+    public final static <T> T find(Predicate<T> pred, Collection<? extends T> collection) {
         for(T t : collection) {
             if (pred.apply(t)) return t;
         }

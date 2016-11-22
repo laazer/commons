@@ -45,6 +45,14 @@ public class CollectionUtilSpec {
             }
         }
         ), loi1) == 5);
+
+        assertTrue("Test find failed", CollectionUtils.find(Functions.toPredicate(new Functions.AFunction<Integer, Boolean>() {
+                   @Override
+                   public Boolean apply(Integer integer) {
+                       return integer > 5;
+                   }
+               }
+        ), loi1) == null);
     }
 
 }
